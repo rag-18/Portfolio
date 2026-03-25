@@ -645,12 +645,19 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
   <span>Built with precision · Secured by design</span>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function switchTab(project, tab, btn) {
-  // hide all panels for this project
   var prefix = project + '-';
   var panels = document.querySelectorAll('[id^="' + prefix + '"]');
   panels.forEach(function(p){ p.style.display = 'none'; });
   document.getElementById(prefix + tab).style.display = 'block';
-  // update tab styles in same ss-tabs container
-  var s
+  var siblings = btn.closest('.ss-tabs').querySelectorAll('.ss-tab');
+  siblings.forEach(function(b){
+    b.classList.remove('active');
+    b.classList.add('inactive');
+  });
+  btn.classList.remove('inactive');
+  btn.classList.add('active');
+}</script>
+</body>
+</html>
