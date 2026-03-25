@@ -82,19 +82,29 @@ h2.stitle span{color:var(--accent)}
 .econt li::before{content:'›';position:absolute;left:0;color:var(--accent)}
 
 /* PROJECT CARDS */
-.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
-.pcard{background:var(--bg2);border:1px solid var(--border);border-radius:2px;overflow:hidden;transition:border-color 0.3s,box-shadow 0.3s}
-.pcard:hover{border-color:var(--border2);box-shadow:0 0 30px rgba(0,212,255,0.07)}
-.pinner{padding:1.75rem}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;align-items:start}
+.pcard{background:var(--bg2);border:1px solid var(--border);border-radius:3px;overflow:hidden;transition:border-color 0.3s,box-shadow 0.3s;display:flex;flex-direction:column}
+.pcard:hover{border-color:var(--border2);box-shadow:0 0 40px rgba(0,212,255,0.09)}
+.pinner{padding:1.75rem;display:flex;flex-direction:column;flex:1}
 .pfeat{grid-column:1/-1}
 .pbadge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--accent3);border:1px solid rgba(255,107,53,0.3);padding:0.2rem 0.6rem;border-radius:2px;margin-bottom:1rem;background:rgba(255,107,53,0.07)}
-.pcard h3{font-size:1.1rem;font-weight:600;margin-bottom:0.3rem}
+.pcard h3{font-size:1.15rem;font-weight:700;margin-bottom:0.3rem;letter-spacing:-0.01em}
 .psub{font-size:0.78rem;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:1rem}
 
 /* Featured layout: left info, right metrics */
-.pfeat-inner{display:grid;grid-template-columns:1fr 1fr;gap:0}
-.pfeat-info{padding:1.75rem;border-right:1px solid var(--border)}
+.pfeat-inner{display:grid;grid-template-columns:55fr 45fr;gap:0}
+.pfeat-info{padding:1.75rem;border-right:1px solid var(--border);display:flex;flex-direction:column}
 .pfeat-vis{padding:1.75rem;background:var(--bg3);display:flex;flex-direction:column;justify-content:flex-start}
+
+/* PROJECT LINK BUTTONS */
+.plinks{display:flex;gap:0.5rem;margin-top:1rem;flex-wrap:wrap}
+.plink{display:inline-flex;align-items:center;gap:0.4rem;font-family:'JetBrains Mono',monospace;font-size:0.72rem;padding:0.4rem 0.85rem;border-radius:2px;text-decoration:none;letter-spacing:0.04em;transition:all 0.2s;font-weight:500}
+.plink-live{background:rgba(0,212,255,0.1);color:var(--accent);border:1px solid rgba(0,212,255,0.35)}
+.plink-live:hover{background:var(--accent);color:#080c10}
+.plink-gh{background:rgba(255,255,255,0.04);color:#a0b4c8;border:1px solid var(--border2)}
+.plink-gh:hover{background:rgba(255,255,255,0.09);color:var(--fg);border-color:rgba(255,255,255,0.3)}
+.plink-soon{background:rgba(255,107,53,0.07);color:var(--accent3);border:1px dashed rgba(255,107,53,0.4);cursor:default;opacity:0.8}
+.plink svg{flex-shrink:0}
 
 .cb{margin-bottom:1rem}
 .clabel{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--accent);letter-spacing:0.1em;margin-bottom:0.3rem}
@@ -164,6 +174,7 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
 
 @media(max-width:1024px){.pgrid{grid-template-columns:1fr}.pfeat-inner{grid-template-columns:1fr}.pfeat-info{border-right:none;border-bottom:1px solid var(--border)}}
+@media(max-width:640px){.plinks{flex-direction:column}.plink{justify-content:center}}
 @media(max-width:960px){
   nav{padding:1rem 1.5rem}.nav-links{gap:1rem}
   section{padding:4rem 1.5rem}
@@ -309,6 +320,10 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
             <span class="stag">Django</span><span class="stag">PostgreSQL</span><span class="stag">Python</span>
             <span class="stag">django-otp</span><span class="stag">django-axes</span><span class="stag">django-csp</span>
             <span class="stag">bleach</span><span class="stag">OWASP ZAP</span><span class="stag">pip-audit</span><span class="stag">STRIDE</span>
+          </div>
+          <div class="plinks">
+            <span class="plink plink-soon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Live Demo · Coming Soon</span>
+            <a href="https://github.com/rag-18/CipherHub" target="_blank" class="plink plink-gh"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85 0 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>GitHub</a>
           </div>
 
           <!-- SCREENSHOTS -->
@@ -481,6 +496,10 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
             <li>Secure session management, CSRF protection, and input validation throughout</li>
           </ul></div>
         <div class="pstack"><span class="stag">Django</span><span class="stag">PostgreSQL</span><span class="stag">Bootstrap</span><span class="stag">JavaScript</span><span class="stag">AJAX</span><span class="stag">RBAC</span></div>
+        <div class="plinks">
+          <a href="https://rag18.pythonanywhere.com/" target="_blank" class="plink plink-live"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>Live Demo</a>
+          <a href="https://github.com/rag-18/techhive" target="_blank" class="plink plink-gh"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85 0 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>GitHub</a>
+        </div>
 
         <div class="ss-wrap">
           <div class="clabel" style="margin-bottom:0.65rem">// SCREENSHOT</div>
@@ -509,6 +528,10 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
             <li>Full audit trail for all transactions — detects discrepancies and unauthorized changes</li>
           </ul></div>
         <div class="pstack"><span class="stag">PHP</span><span class="stag">MySQL</span><span class="stag">RBAC</span><span class="stag">Session Management</span><span class="stag">Input Validation</span></div>
+        <div class="plinks">
+          <a href="https://invenza.infinityfree.me/" target="_blank" class="plink plink-live"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>Live Demo</a>
+          <a href="https://github.com/rag-18/Invenza" target="_blank" class="plink plink-gh"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85 0 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>GitHub</a>
+        </div>
 
         <div class="ss-wrap">
           <div class="clabel" style="margin-bottom:0.65rem">// SCREENSHOTS</div>
@@ -546,6 +569,10 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
             <li>First project where I applied secure development practices end-to-end</li>
           </ul></div>
         <div class="pstack"><span class="stag">PHP</span><span class="stag">MySQL</span><span class="stag">HTML/CSS</span><span class="stag">JavaScript</span><span class="stag">RBAC</span></div>
+        <div class="plinks">
+          <a href="https://voyage.infinityfree.me/" target="_blank" class="plink plink-live"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>Live Demo</a>
+          <a href="https://github.com/rag-18/Voyage" target="_blank" class="plink plink-gh"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85 0 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>GitHub</a>
+        </div>
 
         <div class="ss-wrap">
           <div class="clabel" style="margin-bottom:0.65rem">// SCREENSHOTS</div>
@@ -590,7 +617,7 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
       <h2 class="stitle" style="margin-bottom:1rem">Let's <span>Connect</span></h2>
       <p style="color:#8a9ab0;line-height:1.8;font-size:0.95rem;max-width:420px">I'm actively applying for MSc Cybersecurity programs and open to collaborations, security research, or interesting projects. The full CipherHub portfolio report is available on request.</p>
       <div class="clinks">
-        <a href="mailto:sreeragvv1803@gmail.com" class="clink ce"><div class="cico2">@</div>sreeragvv1803@gmail.com</a>
+        <a href="/cdn-cgi/l/email-protection#d1a2a3b4b4a3b0b6a7a7e0e9e1e291b6bcb0b8bdffb2bebc" class="clink ce"><div class="cico2">@</div><span class="__cf_email__" data-cfemail="bbc8c9dedec9dadccdcd8a838b88fbdcd6dad2d795d8d4d6">[email&#160;protected]</span></a>
         <a href="https://linkedin.com/in/sreerag-v-v" target="_blank" class="clink cl"><div class="cico2">in</div>linkedin.com/in/sreerag-v-v</a>
         <a href="https://github.com/rag-18" target="_blank" class="clink cg"><div class="cico2">gh</div>github.com/rag-18</a>
         <a href="tel:+918129797348" class="clink cp"><div class="cico2">☎</div>+91 81297 97348</a>
@@ -617,7 +644,7 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
   <span>Built with precision · Secured by design</span>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function switchTab(project, tab, btn) {
   // hide all panels for this project
   var prefix = project + '-';
@@ -625,12 +652,4 @@ function switchTab(project, tab, btn) {
   panels.forEach(function(p){ p.style.display = 'none'; });
   document.getElementById(prefix + tab).style.display = 'block';
   // update tab styles in same ss-tabs container
-  var siblings = btn.parentElement.querySelectorAll('.ss-tab');
-  siblings.forEach(function(t){
-    t.classList.remove('active'); t.classList.add('inactive');
-  });
-  btn.classList.remove('inactive'); btn.classList.add('active');
-}
-</script>
-</body>
-</html>
+  var s
