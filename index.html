@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Sreerag Vadakevalappil — Cybersecurity Portfolio</title>
+<title>Sreerag V V — Cybersecurity Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -82,19 +82,29 @@ h2.stitle span{color:var(--accent)}
 .econt li::before{content:'›';position:absolute;left:0;color:var(--accent)}
 
 /* PROJECT CARDS */
-.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
-.pcard{background:var(--bg2);border:1px solid var(--border);border-radius:2px;overflow:hidden;transition:border-color 0.3s,box-shadow 0.3s}
-.pcard:hover{border-color:var(--border2);box-shadow:0 0 30px rgba(0,212,255,0.07)}
-.pinner{padding:1.75rem}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;align-items:start}
+.pcard{background:var(--bg2);border:1px solid var(--border);border-radius:3px;overflow:hidden;transition:border-color 0.3s,box-shadow 0.3s;display:flex;flex-direction:column}
+.pcard:hover{border-color:var(--border2);box-shadow:0 0 40px rgba(0,212,255,0.09)}
+.pinner{padding:1.75rem;display:flex;flex-direction:column;flex:1}
 .pfeat{grid-column:1/-1}
 .pbadge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--accent3);border:1px solid rgba(255,107,53,0.3);padding:0.2rem 0.6rem;border-radius:2px;margin-bottom:1rem;background:rgba(255,107,53,0.07)}
-.pcard h3{font-size:1.1rem;font-weight:600;margin-bottom:0.3rem}
+.pcard h3{font-size:1.15rem;font-weight:700;margin-bottom:0.3rem;letter-spacing:-0.01em}
 .psub{font-size:0.78rem;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:1rem}
 
 /* Featured layout: left info, right metrics */
-.pfeat-inner{display:grid;grid-template-columns:1fr 1fr;gap:0}
-.pfeat-info{padding:1.75rem;border-right:1px solid var(--border)}
+.pfeat-inner{display:grid;grid-template-columns:55fr 45fr;gap:0}
+.pfeat-info{padding:1.75rem;border-right:1px solid var(--border);display:flex;flex-direction:column}
 .pfeat-vis{padding:1.75rem;background:var(--bg3);display:flex;flex-direction:column;justify-content:flex-start}
+
+/* PROJECT LINK BUTTONS */
+.plinks{display:flex;gap:0.5rem;margin-top:1rem;flex-wrap:wrap}
+.plink{display:inline-flex;align-items:center;gap:0.4rem;font-family:'JetBrains Mono',monospace;font-size:0.72rem;padding:0.4rem 0.85rem;border-radius:2px;text-decoration:none;letter-spacing:0.04em;transition:all 0.2s;font-weight:500}
+.plink-live{background:rgba(0,212,255,0.1);color:var(--accent);border:1px solid rgba(0,212,255,0.35)}
+.plink-live:hover{background:var(--accent);color:#080c10}
+.plink-gh{background:rgba(255,255,255,0.04);color:#a0b4c8;border:1px solid var(--border2)}
+.plink-gh:hover{background:rgba(255,255,255,0.09);color:var(--fg);border-color:rgba(255,255,255,0.3)}
+.plink-soon{background:rgba(255,107,53,0.07);color:var(--accent3);border:1px dashed rgba(255,107,53,0.4);cursor:default;opacity:0.8}
+.plink svg{flex-shrink:0}
 
 .cb{margin-bottom:1rem}
 .clabel{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--accent);letter-spacing:0.1em;margin-bottom:0.3rem}
@@ -151,6 +161,7 @@ h2.stitle span{color:var(--accent)}
 .cl .cico2{background:rgba(0,119,181,0.15);color:#0077b5}
 .cg .cico2{background:rgba(255,255,255,0.07);color:var(--fg)}
 .cp .cico2{background:rgba(0,255,136,0.1);color:var(--accent2)}
+.cthm .cico2{background:rgba(255,107,53,0.1);color:var(--accent3)}
 .qcard{background:var(--bg2);border:1px solid var(--border);padding:2rem;border-radius:2px}
 .irow{display:flex;justify-content:space-between;align-items:center;padding:0.72rem 0;border-bottom:1px solid var(--border);font-size:0.85rem}
 .irow:last-child{border-bottom:none}
@@ -163,22 +174,8 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
 
-/* PDF / print — show all screenshot tabs */
-@media print {
-  nav { display: none !important; }
-  .terminal { display: none !important; }
-  #hero { min-height: auto; padding-top: 3rem; }
-  body::before { display: none; }
-  [id^="ch-"], [id^="inv-"], [id^="voy-"] { display: block !important; }
-  .ss-tabs { display: none !important; }
-  .ss-frame { margin-bottom: 0.75rem; }
-  .pcard { break-inside: avoid; }
-  .pfeat-inner { grid-template-columns: 1fr !important; }
-  .pfeat-info { border-right: none !important; border-bottom: 1px solid var(--border) !important; }
-  section { padding: 3rem 2rem; }
-}
-
 @media(max-width:1024px){.pgrid{grid-template-columns:1fr}.pfeat-inner{grid-template-columns:1fr}.pfeat-info{border-right:none;border-bottom:1px solid var(--border)}}
+@media(max-width:640px){.plinks{flex-direction:column}.plink{justify-content:center}}
 @media(max-width:960px){
   nav{padding:1rem 1.5rem}.nav-links{gap:1rem}
   section{padding:4rem 1.5rem}
@@ -187,23 +184,22 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
   .hero-stats{gap:1.5rem}
   .exp-item,.cinner{grid-template-columns:1fr}
   footer{flex-direction:column;gap:0.5rem;text-align:center}
-  #msc .grid-two{grid-template-columns:1fr !important}
 }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo"><span>Sree</span>rag.</div>
+  <div class="nav-logo"><span style="color:var(--fg)">Sree</span><span style="color:var(--accent)">rag</span>.</div>
   <ul class="nav-links">
     <li><a href="#about">about</a></li>
     <li><a href="#skills">skills</a></li>
     <li><a href="#experience">experience</a></li>
     <li><a href="#projects">projects</a></li>
     <li><a href="#certifications">certs</a></li>
-    <li><a href="#msc" style="color:var(--accent3)">msc</a></li>
     <li><a href="#contact">contact</a></li>
   </ul>
+  <a href="Sreerag_V_V_Resume.pdf" download class="btn-cv">↓ Download CV</a>
 </nav>
 
 <!-- HERO -->
@@ -213,6 +209,11 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
     <h1 class="hero-name">Sreerag<br><span class="ac">V V</span></h1>
     <p class="hero-title">$ role —— <span>Aspiring Cybersecurity Professional</span></p>
     <p class="hero-desc">BCA graduate with hands-on experience in threat detection, SIEM operations, and secure full-stack development. Built CipherHub — a production-grade forum with a custom real-time IDS, SOC dashboard, TOTP 2FA, and 9/10 OWASP Top 10 coverage. Security is a design principle, not an afterthought.</p>
+    <div class="hero-ctas">
+      <a href="#projects" class="btn btn-p">View Projects</a>
+      <a href="Sreerag_V_V_Resume.pdf" download class="btn btn-o">↓ Download CV</a>
+      <a href="#contact" class="btn btn-o">Get in Touch</a>
+    </div>
     <div class="hero-stats">
       <div><div class="sn">5</div><div class="sl">Projects</div></div>
       <div><div class="sn">17</div><div class="sl">Security Controls</div></div>
@@ -320,13 +321,17 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
             <span class="stag">django-otp</span><span class="stag">django-axes</span><span class="stag">django-csp</span>
             <span class="stag">bleach</span><span class="stag">OWASP ZAP</span><span class="stag">pip-audit</span><span class="stag">STRIDE</span>
           </div>
+          <div class="plinks">
+            <a href="https://rag1803.pythonanywhere.com/" target="_blank" class="plink plink-live"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>Live Demo</a>
+            <a href="https://github.com/rag-18/CipherHub" target="_blank" class="plink plink-gh"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85 0 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>GitHub</a>
+          </div>
 
           <!-- SCREENSHOTS -->
           <div class="ss-wrap">
             <div class="clabel" style="margin-bottom:0.65rem">// LIVE SCREENSHOTS</div>
             <div class="ss-tabs">
-              <button class="ss-tab active" onclick="switchTab('ch','soc',this)">SOC Dashboard</button>
-              <button class="ss-tab inactive" onclick="switchTab('ch','home',this)">Forum Home</button>
+              <button class="ss-tab active" onClick="switchTab('ch','soc',this)">SOC Dashboard</button>
+              <button class="ss-tab inactive" onClick="switchTab('ch','home',this)">Forum Home</button>
             </div>
             <div id="ch-soc" class="ss-frame">
               <div class="ss-bar"><span class="ss-dot" style="background:#ff5f56"></span><span class="ss-dot" style="background:#ffbd2e"></span><span class="ss-dot" style="background:#27c93f"></span><span class="ss-url">localhost:8000/security/dashboard/</span><span class="ss-badge" style="color:var(--accent2)">● Staff Only</span></div>
@@ -491,6 +496,10 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
             <li>Secure session management, CSRF protection, and input validation throughout</li>
           </ul></div>
         <div class="pstack"><span class="stag">Django</span><span class="stag">PostgreSQL</span><span class="stag">Bootstrap</span><span class="stag">JavaScript</span><span class="stag">AJAX</span><span class="stag">RBAC</span></div>
+        <div class="plinks">
+          <a href="https://rag18.pythonanywhere.com/" target="_blank" class="plink plink-live"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>Live Demo</a>
+          <a href="https://github.com/rag-18/techhive" target="_blank" class="plink plink-gh"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85 0 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>GitHub</a>
+        </div>
 
         <div class="ss-wrap">
           <div class="clabel" style="margin-bottom:0.65rem">// SCREENSHOT</div>
@@ -502,7 +511,6 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
         </div>
       </div>
     </div>
-
 
     <!-- ===== INVENZA ===== -->
     <div class="pcard">
@@ -520,12 +528,16 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
             <li>Full audit trail for all transactions — detects discrepancies and unauthorized changes</li>
           </ul></div>
         <div class="pstack"><span class="stag">PHP</span><span class="stag">MySQL</span><span class="stag">RBAC</span><span class="stag">Session Management</span><span class="stag">Input Validation</span></div>
+        <div class="plinks">
+          <a href="https://invenza.infinityfree.me/" target="_blank" class="plink plink-live"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>Live Demo</a>
+          <a href="https://github.com/rag-18/Invenza" target="_blank" class="plink plink-gh"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85 0 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>GitHub</a>
+        </div>
 
         <div class="ss-wrap">
           <div class="clabel" style="margin-bottom:0.65rem">// SCREENSHOTS</div>
           <div class="ss-tabs">
-            <button class="ss-tab active" onclick="switchTab('inv','dash',this)">Admin Dashboard</button>
-            <button class="ss-tab inactive" onclick="switchTab('inv','rep',this)">Reports</button>
+            <button class="ss-tab active" onClick="switchTab('inv','dash',this)">Admin Dashboard</button>
+            <button class="ss-tab inactive" onClick="switchTab('inv','rep',this)">Reports</button>
           </div>
           <div id="inv-dash" class="ss-frame">
             <div class="ss-bar"><span class="ss-dot" style="background:#ff5f56"></span><span class="ss-dot" style="background:#ffbd2e"></span><span class="ss-dot" style="background:#27c93f"></span><span class="ss-url">invenza/dashboard/ · Admin</span></div>
@@ -541,7 +553,7 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
       </div>
     </div>
 
-        <!-- ===== VOYAGE ===== -->
+    <!-- ===== VOYAGE ===== -->
     <div class="pcard">
       <div class="pinner">
         <h3>Voyage</h3>
@@ -557,6 +569,10 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
             <li>First project where I applied secure development practices end-to-end</li>
           </ul></div>
         <div class="pstack"><span class="stag">PHP</span><span class="stag">MySQL</span><span class="stag">HTML/CSS</span><span class="stag">JavaScript</span><span class="stag">RBAC</span></div>
+        <div class="plinks">
+          <a href="https://voyage.infinityfree.me/" target="_blank" class="plink plink-live"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>Live Demo</a>
+          <a href="https://github.com/rag-18/Voyage" target="_blank" class="plink plink-gh"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85 0 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>GitHub</a>
+        </div>
 
         <div class="ss-wrap">
           <div class="clabel" style="margin-bottom:0.65rem">// SCREENSHOTS</div>
@@ -581,73 +597,15 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
   </div>
 </section>
 
-
 <!-- CERTIFICATIONS -->
 <section id="certifications">
   <div class="slabel">credentials</div>
   <h2 class="stitle">Certifications &amp; <span>Achievements</span></h2>
   <div class="certs-grid">
-    <div class="certcard"><div class="cico">🛡️</div><div class="ctitle">Cyber Security and Privacy</div><div class="corg">IIT Madras · NPTEL</div><div class="cdet">12-week course · Score: 53% · QS Rank #180 globally</div></div>
-    <div class="certcard"><div class="cico">📊</div><div class="ctitle">Brand Management</div><div class="corg">IIT Kanpur · NPTEL</div><div class="cdet">8-week course · Score: 56%</div></div>
+    <div class="certcard"><div class="cico">🛡️</div><div class="ctitle">Cyber Security and Privacy</div><div class="corg">IIT Madras · NPTEL</div><div class="cdet">12-week course</div></div>
+    <div class="certcard"><div class="cico">📊</div><div class="ctitle">Brand Management</div><div class="corg">IIT Kanpur · NPTEL</div><div class="cdet">8-week course</div></div>
     <div class="certcard"><div class="cico">🌐</div><div class="ctitle">Web Application Development</div><div class="corg">SCMS · Full Stack</div><div class="cdet">Certificate of Merit</div></div>
-    <div class="certcard"><div class="cico">🌍</div><div class="ctitle">IELTS</div><div class="corg">British Council</div><div class="cdet">Band Score: 7.5 · Well above minimum</div></div>
-  </div>
-
-  <!-- Certificate images -->
-  <div style="margin-top:3rem">
-    <div class="slabel" style="margin-bottom:1.5rem">certificate images</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
-
-      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:2px;overflow:hidden">
-        <div style="padding:0.75rem 1rem;border-bottom:1px solid var(--border);font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--accent)">// NPTEL · Cyber Security and Privacy · IIT Madras</div>
-        <img src="Cyber_Security_and_Privacy.png" style="width:100%;display:block" alt="NPTEL Cyber Security Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-        <div style="display:none;align-items:center;justify-content:center;height:120px;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:0.75rem;flex-direction:column;gap:0.5rem">
-          <span style="color:var(--accent)">[ Certificate image ]</span>
-          <span>Add Cyber_Security_and_Privacy.png to folder</span>
-        </div>
-        <div style="padding:0.5rem 1rem;font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--muted)">Roll No: NPTEL24CS121S1052101355 · IIT Madras · QS Rank #180</div>
-      </div>
-
-      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:2px;overflow:hidden">
-        <div style="padding:0.75rem 1rem;border-bottom:1px solid var(--border);font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--accent)">// NPTEL · Brand Management · IIT Kanpur</div>
-        <img src="Brand_Management.png" style="width:100%;display:block" alt="NPTEL Brand Management Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-        <div style="display:none;align-items:center;justify-content:center;height:120px;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:0.75rem;flex-direction:column;gap:0.5rem">
-          <span style="color:var(--accent)">[ Certificate image ]</span>
-          <span>Add Brand_Management.png to folder</span>
-        </div>
-        <div style="padding:0.5rem 1rem;font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--muted)">Roll No: NPTEL24MG84S434800826 · IIT Kanpur</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- WHY TU DUBLIN / MSc APPLICATION -->
-<section id="msc" style="background:var(--bg3);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
-  <div class="slabel">MSc application</div>
-  <h2 class="stitle">Why <span>TU Dublin</span></h2>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start">
-    <div>
-      <p style="color:#a0b4c8;line-height:1.9;font-size:0.95rem;margin-bottom:1.5rem">I am applying for the MSc Computing (Applied Cybersecurity) programme at Technological University Dublin for September 2026. While my Bachelor of Computer Applications from SCMS School of Technology and Management may be classified as a Level 7 qualification under Ireland’s NFQ, I believe my practical cybersecurity experience demonstrates readiness for Level 9 study.</p>
-      <p style="color:#a0b4c8;line-height:1.9;font-size:0.95rem;margin-bottom:1.5rem">I have independently designed, built, and security-tested real-world systems. My primary project, CipherHub, is a production-grade platform implementing intrusion detection, two-factor authentication, rate limiting, and protection against SQL injection and XSS. I validated its security through structured penetration testing, OWASP ZAP scanning, and threat modeling aligned with OWASP standards.</p>
-      <p style="color:#a0b4c8;line-height:1.9;font-size:0.95rem">In addition, I have implemented a SIEM environment using Wazuh, gaining hands-on experience in intrusion detection, file integrity monitoring, and MITRE ATT&CK mapping. I have also completed a certified cybersecurity course from IIT Madras and a six-month Python/Django internship. My IELTS score is 7.5.I have received offer letters from other recognised institutions in Ireland for the same Level 9 QQI programme. TU Dublin remains my first and only choice.</p>
-       <p style="color:#a0b4c8;line-height:1.9;font-size:0.95rem">Given this combination of applied security experience and academic foundation, I request that my application be considered under Recognition of Prior Learning. My work is publicly available for verification.</p>
-    </div>
-    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:2px;padding:1.75rem">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--muted);letter-spacing:0.12em;margin-bottom:1.2rem">// APPLICATION PROFILE</div>
-      <div class="irow"><span class="ilab">Programme</span><span class="ival bl">MSc Computing (Cybersecurity)</span></div>
-      <div class="irow"><span class="ilab">Intake</span><span class="ival gr">September 2026</span></div>
-      <div class="irow"><span class="ilab">IELTS</span><span class="ival gr">7.5 Band (min 6.5)</span></div>
-      <div class="irow"><span class="ilab">Degree</span><span class="ival">BCA · SCMS · 2025</span></div>
-      <div class="irow"><span class="ilab">NPTEL Cert</span><span class="ival bl">IIT Madras · QS #180</span></div>
-      <div class="irow"><span class="ilab">Key project</span><span class="ival" style="color:var(--accent3)">CipherHub · 1,363 attacks blocked</span></div>
-      <div class="irow"><span class="ilab">SIEM lab</span><span class="ival">Wazuh · MITRE ATT&CK</span></div>
-      <div class="irow"><span class="ilab">Internship</span><span class="ival">6 months · Soft Solutions</span></div>
-      <div class="irow"><span class="ilab">TryHackMe</span><span class="ival" style="color:var(--accent3)">rag18 (active)</span></div>
-      <div style="margin-top:1.2rem;padding:0.8rem;background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.15);border-radius:2px;font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--accent);text-align:center">
-        Requesting RPL consideration · Recognition of Prior Learning
-      </div>
-    </div>
+    <div class="certcard"><div class="cico">🌍</div><div class="ctitle">IELTS</div><div class="corg">British Council</div><div class="cdet">Band Score: 7.5</div></div>
   </div>
 </section>
 
@@ -659,12 +617,11 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
       <h2 class="stitle" style="margin-bottom:1rem">Let's <span>Connect</span></h2>
       <p style="color:#8a9ab0;line-height:1.8;font-size:0.95rem;max-width:420px">I'm actively applying for MSc Cybersecurity programs and open to collaborations, security research, or interesting projects. The full CipherHub portfolio report is available on request.</p>
       <div class="clinks">
-        <a href="mailto:sreeragvv18@gmail.com" class="clink ce"><div class="cico2">@</div>sreeragvv18@gmail.com</a>
+        <a href="/cdn-cgi/l/email-protection#d1a2a3b4b4a3b0b6a7a7e0e9e1e291b6bcb0b8bdffb2bebc" class="clink ce"><div class="cico2">@</div><span class="__cf_email__" data-cfemail="bbc8c9dedec9dadccdcd8a838b88fbdcd6dad2d795d8d4d6">[email&#160;protected]</span></a>
         <a href="https://linkedin.com/in/sreerag-v-v" target="_blank" class="clink cl"><div class="cico2">in</div>linkedin.com/in/sreerag-v-v</a>
         <a href="https://github.com/rag-18" target="_blank" class="clink cg"><div class="cico2">gh</div>github.com/rag-18</a>
         <a href="tel:+918129797348" class="clink cp"><div class="cico2">☎</div>+91 81297 97348</a>
-        <a href="https://tryhackme.com/p/rag18" target="_blank" class="clink" style="border-color:var(--border)"><div class="cico2" style="background:rgba(255,107,53,0.1);color:var(--accent3)">THM</div>tryhackme.com/p/rag18</a>
-        <a href="https://rag-18.github.io/Portfolio/" target="_blank" class="clink" style="border-color:var(--border)"><div class="cico2" style="background:rgba(0,255,136,0.08);color:var(--accent2)">↗</div>rag-18.github.io/Portfolio</a>
+        <a href="https://tryhackme.com/p/rag18" target="_blank" class="clink cthm"><div class="cico2">THM</div>tryhackme.com/p/rag18</a>
       </div>
     </div>
     <div class="qcard">
@@ -674,11 +631,9 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
       <div class="irow"><span class="ilab">IELTS Score</span><span class="ival gr">7.5 Band</span></div>
       <div class="irow"><span class="ilab">Specialization</span><span class="ival bl">Cybersecurity</span></div>
       <div class="irow"><span class="ilab">Languages</span><span class="ival">English · Malayalam · Hindi</span></div>
-      <div class="irow"><span class="ilab">Status</span><span class="ival gr">Applying for MSc</span></div>
       <div class="irow"><span class="ilab">GitHub</span><span class="ival bl">rag-18</span></div>
-      <div class="irow"><span class="ilab">TryHackMe</span><span class="ival" style="color:var(--accent3)">rag18</span></div>
-      <div class="irow"><span class="ilab">Portfolio</span><span class="ival bl">rag-18.github.io</span></div>
       <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border)">
+        <a href="Sreerag_V_V_Resume.pdf" download class="btn-cv" style="display:block;text-align:center;padding:0.65rem 1rem">↓ Download CV (PDF)</a>
       </div>
     </div>
   </div>
@@ -691,21 +646,17 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
 
 <script>
 function switchTab(project, tab, btn) {
-  // Hide all panels for this project
   var prefix = project + '-';
   var panels = document.querySelectorAll('[id^="' + prefix + '"]');
-  panels.forEach(function(p) { p.style.display = 'none'; });
+  panels.forEach(function(p){ p.style.display = 'none'; });
   document.getElementById(prefix + tab).style.display = 'block';
-
-  // Update tab button styles within the same ss-tabs container
-  var container = btn.closest('.ss-tabs');
-  container.querySelectorAll('.ss-tab').forEach(function(t) {
-    t.classList.remove('active');
-    t.classList.add('inactive');
+  var siblings = btn.closest('.ss-tabs').querySelectorAll('.ss-tab');
+  siblings.forEach(function(b){
+    b.classList.remove('active');
+    b.classList.add('inactive');
   });
   btn.classList.remove('inactive');
   btn.classList.add('active');
-}
-</script>
+}</script>
 </body>
 </html>
