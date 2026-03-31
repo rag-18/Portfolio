@@ -4,205 +4,197 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Sreerag Vadakevalappil — Cybersecurity Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#1c1e22;
-  --bg2:#22252b;
-  --bg3:#282c34;
-  --bg4:#2e3340;
-  --fg:#e4e7ed;
-  --fg2:#c8cdd8;
-  --muted:#7a8494;
-  --muted2:#545e6e;
-  --accent:#5b9cf6;
-  --accent2:#4ec994;
-  --accent3:#f0834a;
-  --accent-dim:rgba(91,156,246,0.12);
-  --accent2-dim:rgba(78,201,148,0.12);
-  --accent3-dim:rgba(240,131,74,0.12);
-  --border:rgba(255,255,255,0.07);
-  --border2:rgba(255,255,255,0.13);
-  --border3:rgba(255,255,255,0.20)
+  --bg:#080c10;--bg2:#0d1117;--bg3:#111820;--fg:#e8f0f8;
+  --muted:#6a7d90;--accent:#00d4ff;--accent2:#00ff88;--accent3:#ff6b35;
+  --border:rgba(0,212,255,0.12);--border2:rgba(0,212,255,0.25)
 }
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--fg);font-family:'Sora',sans-serif;font-weight:400;overflow-x:hidden;line-height:1.7;font-size:15px}
+body{background:var(--bg);color:var(--fg);font-family:'Space Grotesk',sans-serif;font-weight:400;overflow-x:hidden;line-height:1.6}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,212,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1rem 3rem;background:rgba(28,30,34,0.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--border2)}
-.nav-logo{font-family:'Sora',sans-serif;font-size:1.15rem;font-weight:700;color:var(--fg)}
-.nav-logo span{color:var(--accent)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1rem 3rem;background:rgba(8,12,16,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:var(--accent)}
+.nav-logo span{color:var(--fg)}
 .nav-links{display:flex;gap:1.8rem;list-style:none;align-items:center}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:0.78rem;font-family:'IBM Plex Mono',monospace;transition:color 0.2s;letter-spacing:0.03em}
-.nav-links a:hover{color:var(--fg)}
-.btn-cv{background:var(--accent);color:#0e1014;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:600;padding:0.46rem 1.1rem;border-radius:3px;text-decoration:none;letter-spacing:0.05em;transition:all 0.2s;border:1px solid var(--accent)}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.82rem;font-family:'JetBrains Mono',monospace;transition:color 0.2s}
+.nav-links a:hover{color:var(--accent)}
+.btn-cv{background:var(--accent);color:#080c10;font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:600;padding:0.45rem 1.1rem;border-radius:2px;text-decoration:none;letter-spacing:0.05em;transition:all 0.2s;border:1px solid var(--accent)}
 .btn-cv:hover{background:transparent;color:var(--accent)}
 
 #hero{min-height:100vh;display:flex;align-items:center;padding:8rem 3rem 4rem;position:relative}
-.hero-inner{max-width:820px;position:relative;z-index:1}
-.hero-tag{display:inline-flex;align-items:center;gap:0.5rem;font-family:'IBM Plex Mono',monospace;font-size:0.74rem;color:var(--accent);border:1px solid rgba(91,156,246,0.28);padding:0.35rem 0.9rem;border-radius:3px;margin-bottom:2rem;background:var(--accent-dim)}
+.hero-inner{max-width:860px;position:relative;z-index:1}
+.hero-tag{display:inline-flex;align-items:center;gap:0.5rem;font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--accent);border:1px solid var(--border2);padding:0.35rem 0.8rem;border-radius:2px;margin-bottom:2rem;background:rgba(0,212,255,0.05)}
 .dot{width:6px;height:6px;border-radius:50%;background:var(--accent2);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
-h1.hero-name{font-family:'Sora',sans-serif;font-size:clamp(3rem,7vw,5.5rem);font-weight:700;line-height:1.05;margin-bottom:0.5rem;letter-spacing:-0.025em;color:var(--fg)}
+h1.hero-name{font-family:'Syne',sans-serif;font-size:clamp(3rem,7vw,5.5rem);font-weight:800;line-height:1.05;margin-bottom:0.5rem;letter-spacing:-0.02em}
 h1.hero-name .ac{color:var(--accent)}
-.hero-title{font-family:'IBM Plex Mono',monospace;font-size:0.9rem;color:var(--muted);margin-bottom:1.5rem}
+.hero-title{font-family:'JetBrains Mono',monospace;font-size:1rem;color:var(--muted);margin-bottom:1.5rem}
 .hero-title span{color:var(--accent2)}
-.hero-desc{font-size:1rem;color:var(--fg2);max-width:600px;line-height:1.85;margin-bottom:2.5rem}
+.hero-desc{font-size:1.05rem;color:#a0b4c8;max-width:620px;line-height:1.8;margin-bottom:2.5rem}
 .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
-.btn{display:inline-block;padding:0.7rem 1.6rem;text-decoration:none;font-family:'IBM Plex Mono',monospace;font-size:0.77rem;letter-spacing:0.06em;border-radius:3px;transition:all 0.2s}
-.btn-p{background:var(--accent);color:#0e1014;font-weight:600;border:1px solid var(--accent)}
+.btn{display:inline-block;padding:0.72rem 1.6rem;text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:0.8rem;letter-spacing:0.07em;border-radius:2px;transition:all 0.2s}
+.btn-p{background:var(--accent);color:#080c10;font-weight:600;border:1px solid var(--accent)}
 .btn-p:hover{background:transparent;color:var(--accent)}
-.btn-o{background:transparent;color:var(--fg2);border:1px solid var(--border2)}
+.btn-o{background:transparent;color:var(--fg);border:1px solid var(--border2)}
 .btn-o:hover{border-color:var(--accent);color:var(--accent)}
-.hero-stats{display:flex;gap:3rem;margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border2)}
-.sn{font-family:'Sora',sans-serif;font-size:2.1rem;font-weight:700;color:var(--accent)}
-.sl{font-size:0.74rem;color:var(--muted);font-family:'IBM Plex Mono',monospace;margin-top:0.15rem}
+.hero-stats{display:flex;gap:3rem;margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border)}
+.sn{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--accent)}
+.sl{font-size:0.78rem;color:var(--muted);font-family:'JetBrains Mono',monospace}
 
-.terminal{position:absolute;right:3rem;top:50%;transform:translateY(-50%);width:355px;background:var(--bg3);border:1px solid var(--border2);border-radius:6px;font-family:'IBM Plex Mono',monospace;font-size:0.77rem;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,0.35)}
-.t-bar{background:var(--bg4);padding:0.6rem 1rem;display:flex;gap:6px;align-items:center;border-bottom:1px solid var(--border)}
+.terminal{position:absolute;right:3rem;top:50%;transform:translateY(-50%);width:360px;background:var(--bg2);border:1px solid var(--border2);border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:0.78rem;overflow:hidden}
+.t-bar{background:var(--bg3);padding:0.6rem 1rem;display:flex;gap:6px;align-items:center;border-bottom:1px solid var(--border)}
 .t-bar span{width:10px;height:10px;border-radius:50%}
 .tb-r{background:#ff5f56}.tb-y{background:#ffbd2e}.tb-g{background:#27c93f}
 .t-body{padding:1rem 1rem 1.2rem}
-.tl{margin:0.22rem 0;color:var(--muted)}
-.ta{color:var(--accent)}.tg{color:var(--accent2)}.tm{color:var(--muted2)}
+.tl{margin:0.2rem 0;color:#7a9ab8}
+.ta{color:var(--accent)}.tg{color:var(--accent2)}.tm{color:var(--muted)}
 .tc{display:inline-block;width:8px;height:1em;background:var(--accent);vertical-align:middle;animation:blink 1s step-end infinite}
 @keyframes blink{50%{opacity:0}}
 
 section{padding:6rem 3rem;position:relative;z-index:1}
-.slabel{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:var(--accent);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.8rem;display:flex;align-items:center;gap:0.6rem}
-.slabel::before{content:'';display:inline-block;width:20px;height:1px;background:var(--accent)}
-h2.stitle{font-family:'Sora',sans-serif;font-size:clamp(1.9rem,3.8vw,2.7rem);font-weight:700;margin-bottom:3rem;letter-spacing:-0.02em;color:var(--fg)}
+.slabel{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem}
+.slabel::before{content:'// '}
+h2.stitle{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:800;margin-bottom:3rem;letter-spacing:-0.02em}
 h2.stitle span{color:var(--accent)}
 
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1.25rem}
-.skcard{background:var(--bg2);border:1px solid var(--border);padding:1.5rem;border-radius:4px;position:relative;overflow:hidden;transition:border-color 0.2s,transform 0.2s}
-.skcard::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.skcard{background:var(--bg);border:1px solid var(--border);padding:1.5rem;border-radius:2px;position:relative;overflow:hidden;transition:border-color 0.2s,transform 0.2s}
+.skcard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
 .skcard:hover{border-color:var(--border2);transform:translateY(-2px)}
-.skcard:hover::after{transform:scaleX(1)}
-.skcat{font-family:'IBM Plex Mono',monospace;font-size:0.66rem;color:var(--accent);letter-spacing:0.12em;margin-bottom:0.7rem}
-.skcard h3{font-size:0.92rem;font-weight:600;margin-bottom:0.9rem;color:var(--fg)}
-.tags{display:flex;flex-wrap:wrap;gap:0.38rem}
-.tag{font-family:'IBM Plex Mono',monospace;font-size:0.67rem;color:var(--fg2);background:var(--bg3);border:1px solid var(--border);padding:0.22rem 0.55rem;border-radius:3px}
+.skcard:hover::before{transform:scaleX(1)}
+.skcat{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--accent);letter-spacing:0.1em;margin-bottom:0.75rem}
+.skcard h3{font-size:1rem;font-weight:500;margin-bottom:1rem}
+.tags{display:flex;flex-wrap:wrap;gap:0.4rem}
+.tag{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#7a9ab8;background:rgba(0,212,255,0.06);border:1px solid var(--border);padding:0.25rem 0.6rem;border-radius:2px}
 
 .exp-item{display:grid;grid-template-columns:1fr 3fr;gap:3rem;padding:2.5rem 0;border-bottom:1px solid var(--border)}
 .exp-item:last-child{border-bottom:none}
-.edate{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--accent);margin-bottom:0.45rem}
-.eco{font-size:0.8rem;color:var(--muted)}
-.econt h3{font-size:1rem;font-weight:600;margin-bottom:0.35rem;color:var(--fg)}
-.erole{font-family:'IBM Plex Mono',monospace;font-size:0.74rem;color:var(--accent2);margin-bottom:1rem}
+.edate{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--accent);margin-bottom:0.5rem}
+.eco{font-size:0.85rem;color:var(--muted)}
+.econt h3{font-size:1.1rem;font-weight:500;margin-bottom:0.4rem}
+.erole{font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--accent2);margin-bottom:1rem}
 .econt ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
-.econt li{font-size:0.87rem;color:var(--fg2);padding-left:1.2rem;position:relative;line-height:1.75}
+.econt li{font-size:0.9rem;color:#a0b4c8;padding-left:1.2rem;position:relative}
 .econt li::before{content:'›';position:absolute;left:0;color:var(--accent)}
 
-.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
-.pcard{background:var(--bg2);border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:border-color 0.25s,box-shadow 0.25s}
-.pcard:hover{border-color:var(--border2);box-shadow:0 4px 28px rgba(0,0,0,0.25)}
+/* PROJECT CARDS */
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.pcard{background:var(--bg2);border:1px solid var(--border);border-radius:2px;overflow:hidden;transition:border-color 0.3s,box-shadow 0.3s}
+.pcard:hover{border-color:var(--border2);box-shadow:0 0 30px rgba(0,212,255,0.07)}
 .pinner{padding:1.75rem}
 .pfeat{grid-column:1/-1}
+.pbadge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--accent3);border:1px solid rgba(255,107,53,0.3);padding:0.2rem 0.6rem;border-radius:2px;margin-bottom:1rem;background:rgba(255,107,53,0.07)}
+.pcard h3{font-size:1.1rem;font-weight:600;margin-bottom:0.3rem}
+.psub{font-size:0.78rem;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:1rem}
+
+/* Featured layout: left info, right metrics */
 .pfeat-inner{display:grid;grid-template-columns:1fr 1fr;gap:0}
 .pfeat-info{padding:1.75rem;border-right:1px solid var(--border)}
-.pfeat-vis{padding:1.75rem;background:var(--bg3);display:flex;flex-direction:column}
-.pcard h3{font-size:1.05rem;font-weight:600;margin-bottom:0.28rem;color:var(--fg)}
-.psub{font-size:0.72rem;color:var(--muted);font-family:'IBM Plex Mono',monospace;margin-bottom:1rem}
-.cb{margin-bottom:0.9rem}
-.clabel{font-family:'IBM Plex Mono',monospace;font-size:0.63rem;color:var(--accent);letter-spacing:0.12em;margin-bottom:0.32rem}
-.ctext{font-size:0.84rem;color:var(--fg2);line-height:1.82}
-.plist{list-style:none;display:flex;flex-direction:column;gap:0.38rem;margin-bottom:0.4rem}
-.plist li{font-size:0.79rem;color:var(--fg2);padding-left:1.15rem;position:relative;line-height:1.72}
-.plist li::before{content:'→';position:absolute;left:0;color:var(--accent2);font-size:0.68rem;top:0.18rem}
-.pstack{display:flex;flex-wrap:wrap;gap:0.32rem;margin-top:0.7rem}
-.stag{font-family:'IBM Plex Mono',monospace;font-size:0.62rem;color:var(--accent);background:var(--accent-dim);border:1px solid rgba(91,156,246,0.22);padding:0.17rem 0.48rem;border-radius:3px}
+.pfeat-vis{padding:1.75rem;background:var(--bg3);display:flex;flex-direction:column;justify-content:flex-start}
 
-.smet{display:flex;align-items:center;justify-content:space-between;padding:0.52rem 0;border-bottom:1px solid var(--border);font-family:'IBM Plex Mono',monospace;font-size:0.7rem}
+.cb{margin-bottom:1rem}
+.clabel{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--accent);letter-spacing:0.1em;margin-bottom:0.3rem}
+.ctext{font-size:0.85rem;color:#8a9ab0;line-height:1.75}
+.plist{list-style:none;display:flex;flex-direction:column;gap:0.35rem;margin-bottom:0.5rem}
+.plist li{font-size:0.81rem;color:#7a9ab8;padding-left:1.1rem;position:relative}
+.plist li::before{content:'→';position:absolute;left:0;color:var(--accent2);font-size:0.7rem;top:0.15rem}
+.pstack{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:0.75rem}
+.stag{font-family:'JetBrains Mono',monospace;font-size:0.66rem;color:var(--accent);background:rgba(0,212,255,0.07);border:1px solid rgba(0,212,255,0.2);padding:0.18rem 0.5rem;border-radius:2px}
+
+/* METRICS PANEL */
+.smet{display:flex;align-items:center;justify-content:space-between;padding:0.55rem 0;border-bottom:1px solid var(--border);font-family:'JetBrains Mono',monospace;font-size:0.74rem}
 .smet:last-of-type{border-bottom:none}
 .mlab{color:var(--muted)}
 .mval{color:var(--accent2);font-weight:500}
 .mval.w{color:var(--accent3)}.mval.i{color:var(--accent)}
-.orow{display:flex;align-items:center;gap:0.5rem;margin-bottom:0.38rem}
-.olab{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;color:var(--muted);width:76px;flex-shrink:0}
-.obar{flex:1;height:4px;background:rgba(255,255,255,0.07);border-radius:2px;overflow:hidden}
-.ofill{height:100%;border-radius:2px;background:var(--accent2)}
+.orow{display:flex;align-items:center;gap:0.5rem;margin-bottom:0.4rem}
+.olab{font-family:'JetBrains Mono',monospace;font-size:0.63rem;color:var(--muted);width:78px;flex-shrink:0}
+.obar{flex:1;height:5px;background:rgba(255,255,255,0.06);border-radius:1px;overflow:hidden}
+.ofill{height:100%;border-radius:1px;background:var(--accent2)}
 .ofill.p{background:var(--accent3)}
-.ost{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;width:44px;text-align:right;flex-shrink:0}
+.ost{font-family:'JetBrains Mono',monospace;font-size:0.62rem;width:44px;text-align:right;flex-shrink:0}
 
-.ss-wrap{margin-top:1.1rem;padding-top:1.1rem;border-top:1px solid var(--border)}
-.ss-tabs{display:flex;gap:0.38rem;margin-bottom:0.6rem;flex-wrap:wrap}
-.ss-tab{font-family:'IBM Plex Mono',monospace;font-size:0.63rem;padding:0.26rem 0.62rem;border-radius:3px;cursor:pointer;transition:all 0.15s}
-.ss-tab.active{background:var(--accent);color:#0e1014;border:1px solid var(--accent);font-weight:600}
+/* SCREENSHOT VIEWER */
+.ss-wrap{margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid var(--border)}
+.ss-tabs{display:flex;gap:0.4rem;margin-bottom:0.65rem;flex-wrap:wrap}
+.ss-tab{font-family:'JetBrains Mono',monospace;font-size:0.66rem;padding:0.28rem 0.65rem;border-radius:2px;cursor:pointer;transition:all 0.15s}
+.ss-tab.active{background:var(--accent);color:#080c10;border:1px solid var(--accent);font-weight:600}
 .ss-tab.inactive{background:transparent;color:var(--muted);border:1px solid var(--border2)}
-.ss-frame{border:1px solid var(--border2);border-radius:4px;overflow:hidden}
-.ss-bar{background:#0e1014;padding:6px 12px;display:flex;align-items:center;gap:5px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.ss-frame{border:1px solid var(--border2);border-radius:3px;overflow:hidden}
+.ss-bar{background:#0d1520;padding:6px 12px;display:flex;align-items:center;gap:5px;border-bottom:1px solid var(--border)}
 .ss-dot{width:8px;height:8px;border-radius:50%;display:inline-block}
-.ss-url{font-family:'IBM Plex Mono',monospace;font-size:0.59rem;color:#485060;margin-left:6px}
-.ss-badge{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:0.59rem}
+.ss-url{font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:#3a6a90;margin-left:6px}
+.ss-badge{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:0.6rem}
 .ss-img{width:100%;display:block}
-.ss-caption{background:var(--bg3);padding:5px 12px;font-family:'IBM Plex Mono',monospace;font-size:0.6rem;color:var(--muted);border-top:1px solid var(--border)}
+.ss-caption{background:#0d1520;padding:5px 12px;font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:#3a5a70}
 
-.certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1rem}
-.certcard{background:var(--bg2);border:1px solid var(--border);padding:1.4rem;border-radius:4px;display:flex;flex-direction:column;gap:0.45rem;transition:border-color 0.2s}
+/* CERTS */
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.certcard{background:var(--bg);border:1px solid var(--border);padding:1.5rem;border-radius:2px;display:flex;flex-direction:column;gap:0.5rem;transition:border-color 0.2s}
 .certcard:hover{border-color:var(--border2)}
-.cico{font-size:1.35rem;margin-bottom:0.15rem}
-.ctitle{font-size:0.88rem;font-weight:600;color:var(--fg)}
-.corg{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:var(--accent)}
-.cdet{font-size:0.76rem;color:var(--muted);line-height:1.6}
+.cico{font-size:1.4rem;margin-bottom:0.2rem}
+.ctitle{font-size:0.9rem;font-weight:500}
+.corg{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--accent)}
+.cdet{font-size:0.78rem;color:var(--muted)}
 
+/* CONTACT */
 .cinner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
-.clinks{display:flex;flex-direction:column;gap:0.7rem;margin-top:1.8rem}
-.clink{display:flex;align-items:center;gap:0.75rem;text-decoration:none;color:var(--fg2);font-size:0.85rem;padding:0.72rem 1rem;border:1px solid var(--border);border-radius:4px;transition:border-color 0.2s,color 0.2s;background:var(--bg2)}
+.clinks{display:flex;flex-direction:column;gap:0.75rem;margin-top:2rem}
+.clink{display:flex;align-items:center;gap:0.75rem;text-decoration:none;color:var(--fg);font-size:0.88rem;padding:0.75rem 1rem;border:1px solid var(--border);border-radius:2px;transition:border-color 0.2s,color 0.2s;background:var(--bg2)}
 .clink:hover{border-color:var(--border2);color:var(--accent)}
-.cico2{width:30px;height:30px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:0.66rem;font-weight:500}
-.ce .cico2{background:var(--accent-dim);color:var(--accent)}
-.cl .cico2{background:rgba(0,119,181,0.14);color:var(--accent)}
-.cg .cico2{background:var(--bg3);color:var(--fg2)}
-.cp .cico2{background:var(--accent2-dim);color:var(--accent2)}
-.qcard{background:var(--bg3);border:1px solid var(--border);padding:1.75rem;border-radius:4px}
-.irow{display:flex;justify-content:space-between;align-items:center;padding:0.68rem 0;border-bottom:1px solid var(--border);font-size:0.83rem}
+.cico2{width:32px;height:32px;border-radius:2px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:0.7rem;font-weight:500}
+.ce .cico2{background:rgba(0,212,255,0.1);color:var(--accent)}
+.cl .cico2{background:rgba(0,119,181,0.15);color:#0077b5}
+.cg .cico2{background:rgba(255,255,255,0.07);color:var(--fg)}
+.cp .cico2{background:rgba(0,255,136,0.1);color:var(--accent2)}
+.qcard{background:var(--bg2);border:1px solid var(--border);padding:2rem;border-radius:2px}
+.irow{display:flex;justify-content:space-between;align-items:center;padding:0.72rem 0;border-bottom:1px solid var(--border);font-size:0.85rem}
 .irow:last-child{border-bottom:none}
-.ilab{color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:0.7rem}
-.ival{color:var(--fg2)}
+.ilab{color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:0.75rem}
+.ival{color:var(--fg)}
 .ival.gr{color:var(--accent2)}.ival.bl{color:var(--accent)}
 
-/* WHY TU DUBLIN */
-#msc{background:var(--bg2);border-top:1px solid var(--border2);border-bottom:1px solid var(--border2)}
-.msc-grid{display:grid;grid-template-columns:2fr 1fr;gap:4rem;align-items:start}
-.msc-statement{font-size:0.95rem;color:var(--fg2);line-height:1.95}
-.msc-statement p{margin-bottom:1.35rem}
-.msc-statement p:last-child{margin-bottom:0}
-.msc-statement strong{color:var(--fg);font-weight:600}
-.msc-card{background:var(--bg3);border:1px solid var(--border);padding:1.5rem;border-radius:4px}
-.msc-card-label{font-family:'IBM Plex Mono',monospace;font-size:0.64rem;color:var(--muted);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--border)}
-.msc-row{display:flex;justify-content:space-between;align-items:flex-start;padding:0.58rem 0;border-bottom:1px solid var(--border);font-size:0.81rem;gap:1rem}
-.msc-row:last-child{border-bottom:none}
-.msc-label{color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:0.67rem;flex-shrink:0}
-.msc-val{color:var(--fg2);text-align:right}
-.msc-val.a{color:var(--accent)}.msc-val.g{color:var(--accent2)}.msc-val.o{color:var(--accent3)}
+footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--muted)}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
 
-footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:var(--muted)}
-
-@media print{
-  nav{display:none !important}
-  .terminal{display:none !important}
-  #hero{min-height:auto;padding-top:3rem}
-  [id^="ch-"],[id^="inv-"],[id^="voy-"]{display:block !important}
-  .ss-tabs{display:none !important}
-  .ss-frame{margin-bottom:0.75rem}
-  .pcard{break-inside:avoid}
-  .pfeat-inner{grid-template-columns:1fr !important}
-  .pfeat-info{border-right:none !important;border-bottom:1px solid var(--border) !important}
-  .msc-grid{grid-template-columns:1fr !important}
-  section{padding:3rem 2rem}
-  body{font-size:13.5px}
-  .pgrid{grid-template-columns:1fr}
+/* PDF / print — show all screenshot tabs */
+@media print {
+  nav { display: none !important; }
+  .terminal { display: none !important; }
+  #hero { min-height: auto; padding-top: 3rem; }
+  body::before { display: none; }
+  [id^="ch-"], [id^="inv-"], [id^="voy-"] { display: block !important; }
+  .ss-tabs { display: none !important; }
+  .ss-frame { margin-bottom: 0.75rem; }
+  .pcard { break-inside: avoid; }
+  .pfeat-inner { grid-template-columns: 1fr !important; }
+  .pfeat-info { border-right: none !important; border-bottom: 1px solid var(--border) !important; }
+  section { padding: 3rem 2rem; }
 }
-@media(max-width:1024px){.pgrid{grid-template-columns:1fr}.pfeat-inner{grid-template-columns:1fr}.pfeat-info{border-right:none;border-bottom:1px solid var(--border)}.msc-grid{grid-template-columns:1fr}}
-@media(max-width:960px){nav{padding:1rem 1.5rem}.nav-links{gap:1rem}section{padding:4rem 1.5rem}#hero{padding:7rem 1.5rem 3rem}.terminal{display:none}.hero-stats{gap:1.5rem}.exp-item,.cinner{grid-template-columns:1fr}footer{flex-direction:column;gap:0.5rem;text-align:center}}
-::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
+
+@media(max-width:1024px){.pgrid{grid-template-columns:1fr}.pfeat-inner{grid-template-columns:1fr}.pfeat-info{border-right:none;border-bottom:1px solid var(--border)}}
+@media(max-width:960px){
+  nav{padding:1rem 1.5rem}.nav-links{gap:1rem}
+  section{padding:4rem 1.5rem}
+  #hero{padding:7rem 1.5rem 3rem}
+  .terminal{display:none}
+  .hero-stats{gap:1.5rem}
+  .exp-item,.cinner{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:0.5rem;text-align:center}
+  #msc .grid-two{grid-template-columns:1fr !important}
+}
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo"><span>Sree</span>rag V V</div>
+  <div class="nav-logo"><span>Sree</span>rag.</div>
   <ul class="nav-links">
     <li><a href="#about">about</a></li>
     <li><a href="#skills">skills</a></li>
@@ -214,13 +206,13 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
   </ul>
 </nav>
 
+<!-- HERO -->
 <section id="about" style="padding:0">
 <div id="hero">
   <div class="hero-inner">
     <h1 class="hero-name">Sreerag<br><span class="ac">V V</span></h1>
     <p class="hero-title">$ role —— <span>Aspiring Cybersecurity Professional</span></p>
     <p class="hero-desc">BCA graduate with hands-on experience in threat detection, SIEM operations, and secure full-stack development. Built CipherHub — a production-grade forum with a custom real-time IDS, SOC dashboard, TOTP 2FA, and 9/10 OWASP Top 10 coverage. Security is a design principle, not an afterthought.</p>
-
     <div class="hero-stats">
       <div><div class="sn">5</div><div class="sl">Projects</div></div>
       <div><div class="sn">17</div><div class="sl">Security Controls</div></div>
@@ -230,7 +222,7 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
   </div>
   <div class="terminal">
     <div class="t-bar"><span class="tb-r"></span><span class="tb-y"></span><span class="tb-g"></span>
-      <span style="margin-left:0.5rem;color:var(--muted2);font-size:0.69rem">sreerag@sec ~ </span></div>
+      <span style="margin-left:0.5rem;color:#3a5a70;font-size:0.7rem">sreerag@sec ~ </span></div>
     <div class="t-body">
       <div class="tl"><span class="tm">$ </span><span class="ta">run</span> cipherhub --security-check</div>
       <div class="tl"><span class="tg">[ OK ]</span> IDS middleware — 1363 blocked</div>
@@ -246,21 +238,23 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
 </div>
 </section>
 
+<!-- SKILLS -->
 <section id="skills" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
   <div class="slabel">expertise</div>
   <h2 class="stitle">Technical <span>Skills</span></h2>
   <div class="skills-grid">
     <div class="skcard"><div class="skcat">01 // CYBERSECURITY</div><h3>Security Operations</h3>
-      <div class="tags"><span class="tag">OWASP Top 10</span><span class="tag">Pen Testing</span><span class="tag">OWASP ZAP</span><span class="tag">STRIDE</span><span class="tag">Threat Modeling</span><span class="tag">IDS</span><span class="tag">2FA / TOTP</span><span class="tag">Brute Force Protection</span><span class="tag">SIEM (Wazuh)</span><span class="tag">Log Analysis</span><span class="tag">MITRE ATT&amp;CK</span></div></div>
-    <div class="skcard"><div class="skcat">02 // DEVELOPMENT</div><h3>Languages &amp; Frameworks</h3>
+      <div class="tags"><span class="tag">OWASP Top 10</span><span class="tag">Pen Testing</span><span class="tag">OWASP ZAP</span><span class="tag">STRIDE</span><span class="tag">Threat Modeling</span><span class="tag">IDS</span><span class="tag">2FA / TOTP</span><span class="tag">Brute Force Protection</span><span class="tag">SIEM (Wazuh)</span><span class="tag">Log Analysis</span><span class="tag">MITRE ATT&CK</span></div></div>
+    <div class="skcard"><div class="skcat">02 // DEVELOPMENT</div><h3>Languages & Frameworks</h3>
       <div class="tags"><span class="tag">Python</span><span class="tag">Django</span><span class="tag">Django REST</span><span class="tag">PHP</span><span class="tag">C++</span><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">HTML/CSS</span><span class="tag">Bootstrap</span><span class="tag">AJAX</span></div></div>
     <div class="skcard"><div class="skcat">03 // SECURITY STACK</div><h3>Security Libraries</h3>
       <div class="tags"><span class="tag">django-otp</span><span class="tag">django-axes</span><span class="tag">django-ratelimit</span><span class="tag">django-csp</span><span class="tag">bleach</span><span class="tag">pip-audit</span><span class="tag">PBKDF2-SHA256</span></div></div>
-    <div class="skcard"><div class="skcat">04 // TOOLS &amp; DATABASES</div><h3>Tools &amp; Platforms</h3>
+    <div class="skcard"><div class="skcat">04 // TOOLS & DATABASES</div><h3>Tools & Platforms</h3>
       <div class="tags"><span class="tag">Wazuh</span><span class="tag">OWASP ZAP</span><span class="tag">Git</span><span class="tag">Linux</span><span class="tag">VS Code</span><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">SQLite</span></div></div>
   </div>
 </section>
 
+<!-- EXPERIENCE -->
 <section id="experience">
   <div class="slabel">career</div>
   <h2 class="stitle">Work <span>Experience</span></h2>
@@ -286,18 +280,25 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
   </div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
   <div class="slabel">portfolio</div>
   <h2 class="stitle">Featured <span>Projects</span></h2>
   <div class="pgrid">
 
+    <!-- ===== CIPHERHUB ===== -->
     <div class="pcard pfeat">
       <div class="pfeat-inner">
         <div class="pfeat-info">
           <h3>CipherHub</h3>
           <div class="psub">Cybersecurity Community Forum · Feb – Mar 2026 · ~2,500 lines Python</div>
-          <div class="cb"><div class="clabel">// THE PROBLEM</div><p class="ctext">Most portfolio apps treat security as an add-on. I wanted to build a system where security was the primary design principle at every layer of the stack — then actually attack it to prove it holds.</p></div>
-          <div class="cb"><div class="clabel">// WHAT I BUILT</div><p class="ctext">A fully-featured cybersecurity community forum (posts, rich-text editor, comments, DMs, notifications, follow system, reputation ranks, full-text search) with 17 distinct security controls covering 9/10 OWASP Top 10 2021 categories, a custom real-time IDS, and a staff-only SOC Security Dashboard.</p></div>
+
+          <div class="cb"><div class="clabel">// THE PROBLEM</div>
+            <p class="ctext">Most portfolio apps treat security as an add-on. I wanted to build a system where security was the primary design principle at every layer of the stack — then actually attack it to prove it holds.</p></div>
+
+          <div class="cb"><div class="clabel">// WHAT I BUILT</div>
+            <p class="ctext">A fully-featured cybersecurity community forum (posts, rich-text editor, comments, DMs, notifications, follow system, reputation ranks, full-text search) with 17 distinct security controls covering 9/10 OWASP Top 10 2021 categories, a custom real-time IDS, and a staff-only SOC Security Dashboard.</p></div>
+
           <div class="cb"><div class="clabel">// KEY SECURITY DECISIONS</div>
             <ul class="plist">
               <li>Custom IDS middleware scans every HTTP request for SQLi, XSS, path traversal, command injection — returns 403 and logs to AttackLog model</li>
@@ -306,15 +307,23 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
               <li>PBKDF2-SHA256 at 720k iterations — GPU cracking practically infeasible</li>
               <li>CSP headers + bleach sanitization on all user input to neutralize XSS</li>
             </ul></div>
-          <div class="cb"><div class="clabel">// TESTING &amp; VALIDATION</div>
+
+          <div class="cb"><div class="clabel">// TESTING & VALIDATION</div>
             <ul class="plist">
               <li>8 manual pen test scenarios — all blocked · OWASP ZAP: 16 alerts, all documented</li>
               <li>pip-audit: 7 CVEs found and remediated — final result: 0 known vulnerabilities</li>
               <li>STRIDE: 28 threats across 5 components, all High/Medium mitigated</li>
             </ul></div>
-          <div class="pstack"><span class="stag">Django</span><span class="stag">PostgreSQL</span><span class="stag">Python</span><span class="stag">django-otp</span><span class="stag">django-axes</span><span class="stag">django-csp</span><span class="stag">bleach</span><span class="stag">OWASP ZAP</span><span class="stag">pip-audit</span><span class="stag">STRIDE</span></div>
+
+          <div class="pstack">
+            <span class="stag">Django</span><span class="stag">PostgreSQL</span><span class="stag">Python</span>
+            <span class="stag">django-otp</span><span class="stag">django-axes</span><span class="stag">django-csp</span>
+            <span class="stag">bleach</span><span class="stag">OWASP ZAP</span><span class="stag">pip-audit</span><span class="stag">STRIDE</span>
+          </div>
+
+          <!-- SCREENSHOTS -->
           <div class="ss-wrap">
-            <div class="clabel" style="margin-bottom:0.6rem">// LIVE SCREENSHOTS</div>
+            <div class="clabel" style="margin-bottom:0.65rem">// LIVE SCREENSHOTS</div>
             <div class="ss-tabs">
               <button class="ss-tab active" onclick="switchTab('ch','soc',this)">SOC Dashboard</button>
               <button class="ss-tab inactive" onclick="switchTab('ch','home',this)">Forum Home</button>
@@ -331,8 +340,10 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
             </div>
           </div>
         </div>
+
+        <!-- METRICS PANEL -->
         <div class="pfeat-vis">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:0.63rem;color:var(--muted);letter-spacing:0.14em;margin-bottom:1rem">// SECURITY METRICS</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--muted);letter-spacing:0.12em;margin-bottom:1rem">// SECURITY METRICS</div>
           <div class="smet"><span class="mlab">CVEs (after pip-audit)</span><span class="mval">0 remaining</span></div>
           <div class="smet"><span class="mlab">Security controls</span><span class="mval i">17 implemented</span></div>
           <div class="smet"><span class="mlab">STRIDE threats</span><span class="mval i">28 modeled</span></div>
@@ -342,7 +353,8 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
           <div class="smet"><span class="mlab">Auth method</span><span class="mval">2FA + TOTP</span></div>
           <div class="smet"><span class="mlab">Password hashing</span><span class="mval i">PBKDF2 720k</span></div>
           <div class="smet"><span class="mlab">Django models</span><span class="mval i">18 models</span></div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:0.63rem;color:var(--muted);letter-spacing:0.14em;margin:1.2rem 0 0.8rem">// OWASP TOP 10 2021</div>
+
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--muted);letter-spacing:0.12em;margin:1.2rem 0 0.8rem">// OWASP TOP 10 2021</div>
           <div class="orow"><span class="olab">A01 Access</span><div class="obar"><div class="ofill" style="width:100%"></div></div><span class="ost" style="color:var(--accent2)">Full</span></div>
           <div class="orow"><span class="olab">A02 Crypto</span><div class="obar"><div class="ofill" style="width:100%"></div></div><span class="ost" style="color:var(--accent2)">Full</span></div>
           <div class="orow"><span class="olab">A03 Inject</span><div class="obar"><div class="ofill" style="width:100%"></div></div><span class="ost" style="color:var(--accent2)">Full</span></div>
@@ -357,81 +369,105 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
       </div>
     </div>
 
+    <!-- ===== SOC SIEM ===== -->
     <div class="pcard">
       <div class="pinner">
         <h3>SOC Analyst Lab</h3>
         <div class="psub">Wazuh SIEM Environment · Dec 2025 – Jan 2026</div>
-        <div class="cb"><div class="clabel">// THE PROBLEM</div><p class="ctext">Threat detection requires more than reading theory — I needed to configure and operate a real SIEM to understand how SOC analysts monitor and respond to live events.</p></div>
-        <div class="cb"><div class="clabel">// WHAT I BUILT</div><p class="ctext">A multi-endpoint SIEM lab using Wazuh on Ubuntu Server with a Windows 11 agent. Configured HIDS, file integrity monitoring, PCI DSS compliance checking, and MITRE ATT&amp;CK tactic mapping — the exact tooling used in enterprise SOC environments.</p></div>
+        <div class="cb"><div class="clabel">// THE PROBLEM</div>
+          <p class="ctext">Threat detection requires more than reading theory — I needed to configure and operate a real SIEM to understand how SOC analysts monitor and respond to live events.</p></div>
+        <div class="cb"><div class="clabel">// WHAT I BUILT</div>
+          <p class="ctext">A multi-endpoint SIEM lab using Wazuh on Ubuntu Server with a Windows 11 agent. Configured HIDS, file integrity monitoring, PCI DSS compliance checking, and MITRE ATT&CK tactic mapping — the exact tooling used in enterprise SOC environments.</p></div>
         <div class="cb"><div class="clabel">// KEY WORK</div>
           <ul class="plist">
-            <li>Monitored MITRE ATT&amp;CK tactics live: Defense Evasion (275), Impact (143), Privilege Escalation (124)</li>
+            <li>Monitored MITRE ATT&CK tactics live: Defense Evasion (275), Impact (143), Privilege Escalation (124)</li>
             <li>File integrity monitoring to detect unauthorized system file changes</li>
             <li>Alert triage and incident analysis following real SOC investigation workflows</li>
             <li>SCA against CIS benchmarks for Windows 11 — findings documented</li>
           </ul></div>
-        <div class="pstack"><span class="stag">Wazuh</span><span class="stag">Ubuntu</span><span class="stag">Windows 11</span><span class="stag">MITRE ATT&amp;CK</span><span class="stag">SIEM</span><span class="stag">PCI DSS</span><span class="stag">Log Analysis</span></div>
+        <div class="pstack"><span class="stag">Wazuh</span><span class="stag">Ubuntu</span><span class="stag">Windows 11</span><span class="stag">MITRE ATT&CK</span><span class="stag">SIEM</span><span class="stag">PCI DSS</span><span class="stag">Log Analysis</span></div>
+
         <div class="ss-wrap">
-          <div class="clabel" style="margin-bottom:0.6rem">// LIVE DASHBOARD MOCKUP</div>
-          <div style="background:#0a0d12;border:1px solid rgba(91,156,246,0.2);border-radius:4px;overflow:hidden;font-family:'IBM Plex Mono',monospace">
-            <div style="display:flex;align-items:center;justify-content:space-between;padding:7px 14px;border-bottom:1px solid rgba(255,255,255,0.06)">
-              <span style="font-size:0.63rem;color:var(--accent);letter-spacing:0.08em">// SOC Analyst Project — Wazuh SIEM</span>
-              <span style="display:flex;align-items:center;gap:5px;font-size:0.63rem;color:var(--accent2);border:1px solid rgba(78,201,148,0.2);padding:2px 8px;border-radius:2px;background:rgba(78,201,148,0.05)"><span style="width:5px;height:5px;border-radius:50%;background:var(--accent2);display:inline-block;animation:pulse 2s infinite"></span>Agent Active · E9 (002)</span>
+          <div class="clabel" style="margin-bottom:0.65rem">// LIVE DASHBOARD MOCKUP</div>
+          <!-- Wazuh styled mockup -->
+          <div style="background:#0a0f14;border:1px solid rgba(0,212,255,0.25);border-radius:4px;overflow:hidden;font-family:'JetBrains Mono',monospace">
+            <!-- label bar -->
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:7px 14px;border-bottom:1px solid rgba(0,212,255,0.1)">
+              <span style="font-size:0.65rem;color:#00d4ff;letter-spacing:0.1em">// SOC Analyst Project — Wazuh SIEM</span>
+              <span style="display:flex;align-items:center;gap:5px;font-size:0.65rem;color:#00ff88;border:1px solid rgba(0,255,136,0.2);padding:2px 8px;border-radius:2px;background:rgba(0,255,136,0.05)"><span style="width:5px;height:5px;border-radius:50%;background:#00ff88;display:inline-block;animation:pulse 2s infinite"></span>Agent Active · E9 (002)</span>
             </div>
-            <div style="background:#060810;padding:6px 12px;display:flex;align-items:center;gap:6px;border-bottom:1px solid rgba(255,255,255,0.05)">
-              <span style="width:8px;height:8px;border-radius:50%;background:#ff5f56;display:inline-block"></span><span style="width:8px;height:8px;border-radius:50%;background:#ffbd2e;display:inline-block"></span><span style="width:8px;height:8px;border-radius:50%;background:#27c93f;display:inline-block"></span>
-              <span style="font-size:0.58rem;color:#3a5060;margin-left:4px;flex:1;text-align:center">192.168.1.5 / wazuh / dashboard / endpoints / E9</span>
+            <!-- browser bar -->
+            <div style="background:#0d1520;padding:6px 12px;display:flex;align-items:center;gap:6px;border-bottom:1px solid rgba(0,212,255,0.08)">
+              <span style="width:8px;height:8px;border-radius:50%;background:#ff5f56;display:inline-block"></span>
+              <span style="width:8px;height:8px;border-radius:50%;background:#ffbd2e;display:inline-block"></span>
+              <span style="width:8px;height:8px;border-radius:50%;background:#27c93f;display:inline-block"></span>
+              <span style="font-size:0.6rem;color:#3a6a90;margin-left:4px;flex:1;text-align:center">192.168.1.5 / wazuh / dashboard / endpoints / E9</span>
             </div>
-            <div style="background:#111828;padding:0 14px;display:flex;align-items:center;border-bottom:1px solid rgba(255,255,255,0.05)">
-              <span style="font-size:0.73rem;font-weight:700;color:#fff;padding:8px 14px 8px 0;border-right:1px solid rgba(255,255,255,0.08);margin-right:6px"><span style="color:var(--accent)">W</span>azuh</span>
-              <span style="font-size:0.63rem;color:var(--accent);padding:8px 10px;border-bottom:2px solid var(--accent)">Threat Hunting</span>
-              <span style="font-size:0.63rem;color:var(--muted2);padding:8px 10px">File Integrity</span>
-              <span style="font-size:0.63rem;color:var(--muted2);padding:8px 10px">MITRE ATT&amp;CK</span>
+            <!-- wazuh nav -->
+            <div style="background:#1a2530;padding:0 14px;display:flex;align-items:center;gap:0;border-bottom:1px solid rgba(255,255,255,0.06)">
+              <span style="font-size:0.75rem;font-weight:700;color:#fff;padding:8px 14px 8px 0;border-right:1px solid rgba(255,255,255,0.1);margin-right:6px;letter-spacing:0.04em"><span style="color:#00d4ff">W</span>azuh</span>
+              <span style="font-size:0.65rem;color:#00d4ff;padding:8px 10px;border-bottom:2px solid #00d4ff">Threat Hunting</span>
+              <span style="font-size:0.65rem;color:#5a7a90;padding:8px 10px">File Integrity</span>
+              <span style="font-size:0.65rem;color:#5a7a90;padding:8px 10px">MITRE ATT&amp;CK</span>
             </div>
-            <div style="background:#0d1520;padding:6px 14px;display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(255,255,255,0.04);font-size:0.6rem">
-              <span style="background:#162030;color:var(--accent);padding:2px 7px;border-radius:2px">E9 (002)</span>
-              <span style="color:#7a8a9a">Wazuh <b style="color:#c8d8e8">v4.12.0</b></span>
-              <span style="color:var(--accent2)">● active</span>
-              <span style="color:#7a8a9a">Windows 11 Home 10.0.26200</span>
-              <span style="color:#7a8a9a;margin-left:auto">Last keep-alive: Feb 24, 2026</span>
+            <!-- endpoint bar -->
+            <div style="background:#111c26;padding:6px 14px;display:flex;align-items:center;gap:14px;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.62rem">
+              <span style="background:#1a3a4a;color:#00d4ff;padding:2px 7px;border-radius:2px">E9 (002)</span>
+              <span style="color:#a0b4c8">Wazuh <b style="color:#e8f0f8">v4.12.0</b></span>
+              <span style="display:flex;align-items:center;gap:3px;color:#00ff88"><span style="width:5px;height:5px;border-radius:50%;background:#00ff88;display:inline-block"></span>active</span>
+              <span style="color:#a0b4c8">OS: <b style="color:#e8f0f8">Windows 11 Home 10.0.26200</b></span>
+              <span style="color:#a0b4c8;margin-left:auto">Last keep-alive: <b style="color:#e8f0f8">Feb 24, 2026</b></span>
             </div>
-            <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:1px;background:rgba(255,255,255,0.04);padding:1px">
-              <div style="background:#0d1520;padding:12px">
-                <div style="font-size:0.6rem;color:#7a8a9a;margin-bottom:8px">Events count evolution — last 24h</div>
+            <!-- dashboard grid -->
+            <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:1px;background:rgba(0,212,255,0.07);padding:1px">
+              <!-- events chart -->
+              <div style="background:#0f1923;padding:12px">
+                <div style="font-size:0.62rem;color:#a0b4c8;margin-bottom:8px;letter-spacing:0.04em">Events count evolution — last 24h</div>
                 <svg viewBox="0 0 300 70" style="width:100%;height:70px">
-                  <defs><linearGradient id="wg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5b9cf6" stop-opacity="0.2"/><stop offset="100%" stop-color="#5b9cf6" stop-opacity="0"/></linearGradient></defs>
-                  <polyline points="0,62 20,60 30,28 45,64 70,62 100,60 130,57 160,52 190,46 220,38 250,28 280,14 300,6" fill="none" stroke="#5b9cf6" stroke-width="1.5"/>
-                  <polygon points="0,62 20,60 30,28 45,64 70,62 100,60 130,57 160,52 190,46 220,38 250,28 280,14 300,6 300,70 0,70" fill="url(#wg2)"/>
-                  <text x="0" y="69" fill="#3a5060" font-size="7">18:00</text><text x="95" y="69" fill="#3a5060" font-size="7">00:00</text><text x="190" y="69" fill="#3a5060" font-size="7">06:00</text><text x="268" y="69" fill="#3a5060" font-size="7">12:00</text>
+                  <defs><linearGradient id="wg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00d4ff" stop-opacity="0.18"/><stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/></linearGradient></defs>
+                  <polyline points="0,62 20,60 30,28 45,64 70,62 100,60 130,57 160,52 190,46 220,38 250,28 280,14 300,6" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
+                  <polygon points="0,62 20,60 30,28 45,64 70,62 100,60 130,57 160,52 190,46 220,38 250,28 280,14 300,6 300,70 0,70" fill="url(#wg)"/>
+                  <text x="0" y="69" fill="#3a5a70" font-size="7">18:00</text>
+                  <text x="95" y="69" fill="#3a5a70" font-size="7">00:00</text>
+                  <text x="190" y="69" fill="#3a5a70" font-size="7">06:00</text>
+                  <text x="268" y="69" fill="#3a5a70" font-size="7">12:00</text>
                 </svg>
               </div>
-              <div style="background:#0d1520;padding:12px">
-                <div style="font-size:0.6rem;color:#7a8a9a;margin-bottom:8px">MITRE ATT&amp;CK — top tactics</div>
-                <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:0.58rem"><span style="color:#8a9aaa">Defense Evasion</span><span style="color:#f09090;background:rgba(226,75,74,0.12);padding:1px 5px;border-radius:2px">275</span></div>
-                <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:0.58rem"><span style="color:#8a9aaa">Impact</span><span style="color:#f09090;background:rgba(226,75,74,0.12);padding:1px 5px;border-radius:2px">143</span></div>
-                <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:0.58rem"><span style="color:#8a9aaa">Priv. Escalation</span><span style="color:#f0a870;background:rgba(240,131,74,0.1);padding:1px 5px;border-radius:2px">124</span></div>
-                <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:0.58rem"><span style="color:#8a9aaa">Persistence</span><span style="color:#f0a870;background:rgba(240,131,74,0.1);padding:1px 5px;border-radius:2px">121</span></div>
-                <div style="display:flex;justify-content:space-between;padding:3px 0;font-size:0.58rem"><span style="color:#8a9aaa">Initial Access</span><span style="color:#5b9cf6;background:rgba(91,156,246,0.1);padding:1px 5px;border-radius:2px">115</span></div>
+              <!-- mitre -->
+              <div style="background:#0f1923;padding:12px">
+                <div style="font-size:0.62rem;color:#a0b4c8;margin-bottom:8px">MITRE ATT&amp;CK — top tactics</div>
+                <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.6rem"><span style="color:#8a9ab0">Defense Evasion</span><span style="background:rgba(226,75,74,0.15);color:#f09595;padding:1px 5px;border-radius:2px">275</span></div>
+                <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.6rem"><span style="color:#8a9ab0">Impact</span><span style="background:rgba(226,75,74,0.15);color:#f09595;padding:1px 5px;border-radius:2px">143</span></div>
+                <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.6rem"><span style="color:#8a9ab0">Privilege Escalation</span><span style="background:rgba(239,159,39,0.12);color:#fac775;padding:1px 5px;border-radius:2px">124</span></div>
+                <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.6rem"><span style="color:#8a9ab0">Persistence</span><span style="background:rgba(239,159,39,0.12);color:#fac775;padding:1px 5px;border-radius:2px">121</span></div>
+                <div style="display:flex;justify-content:space-between;padding:3px 0;font-size:0.6rem"><span style="color:#8a9ab0">Initial Access</span><span style="background:rgba(0,212,255,0.1);color:#00d4ff;padding:1px 5px;border-radius:2px">115</span></div>
               </div>
-              <div style="background:#0d1520;padding:12px">
-                <div style="font-size:0.6rem;color:#7a8a9a;margin-bottom:8px">Compliance — PCI DSS</div>
+              <!-- compliance -->
+              <div style="background:#0f1923;padding:12px">
+                <div style="font-size:0.62rem;color:#a0b4c8;margin-bottom:8px">Compliance — PCI DSS</div>
                 <svg width="100%" viewBox="0 0 120 80">
                   <circle cx="50" cy="40" r="26" fill="none" stroke="#111c26" stroke-width="9"/>
-                  <circle cx="50" cy="40" r="26" fill="none" stroke="#4ec994" stroke-width="9" stroke-dasharray="98 65" stroke-dashoffset="20"/>
-                  <circle cx="50" cy="40" r="26" fill="none" stroke="#5b9cf6" stroke-width="9" stroke-dasharray="77 86" stroke-dashoffset="-78"/>
+                  <circle cx="50" cy="40" r="26" fill="none" stroke="#1D9E75" stroke-width="9" stroke-dasharray="98 65" stroke-dashoffset="20"/>
+                  <circle cx="50" cy="40" r="26" fill="none" stroke="#378ADD" stroke-width="9" stroke-dasharray="77 86" stroke-dashoffset="-78"/>
                   <circle cx="50" cy="40" r="26" fill="none" stroke="#E24B4A" stroke-width="9" stroke-dasharray="5 158" stroke-dashoffset="-155"/>
-                  <circle cx="50" cy="40" r="26" fill="none" stroke="#a08af0" stroke-width="9" stroke-dasharray="4 159" stroke-dashoffset="-160"/>
-                  <text x="50" y="44" text-anchor="middle" fill="#8a9aaa" font-size="9" font-family="monospace">288</text>
-                  <g font-size="7" font-family="monospace"><circle cx="82" cy="18" r="3" fill="#4ec994"/><text x="88" y="21" fill="#6a7a8a">11.5 (158)</text><circle cx="82" cy="30" r="3" fill="#5b9cf6"/><text x="88" y="33" fill="#6a7a8a">10.2.5 (115)</text><circle cx="82" cy="42" r="3" fill="#E24B4A"/><text x="88" y="45" fill="#6a7a8a">10.6.1 (7)</text><circle cx="82" cy="54" r="3" fill="#a08af0"/><text x="88" y="57" fill="#6a7a8a">10.6 (6)</text></g>
+                  <circle cx="50" cy="40" r="26" fill="none" stroke="#7F77DD" stroke-width="9" stroke-dasharray="4 159" stroke-dashoffset="-160"/>
+                  <text x="50" y="44" text-anchor="middle" fill="#a0b4c8" font-size="9" font-family="monospace">288</text>
+                  <g font-size="7" font-family="monospace">
+                    <circle cx="82" cy="18" r="3" fill="#1D9E75"/><text x="88" y="21" fill="#7a9ab8">11.5 (158)</text>
+                    <circle cx="82" cy="30" r="3" fill="#378ADD"/><text x="88" y="33" fill="#7a9ab8">10.2.5 (115)</text>
+                    <circle cx="82" cy="42" r="3" fill="#E24B4A"/><text x="88" y="45" fill="#7a9ab8">10.6.1 (7)</text>
+                    <circle cx="82" cy="54" r="3" fill="#7F77DD"/><text x="88" y="57" fill="#7a9ab8">10.6 (6)</text>
+                  </g>
                 </svg>
               </div>
             </div>
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:7px 14px;border-top:1px solid rgba(255,255,255,0.04)">
-              <span style="font-size:0.58rem;color:#3a5060">Wazuh v4.12.0 · Ubuntu Server · Windows 11 endpoint · node01</span>
+            <!-- bottom -->
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:7px 14px;border-top:1px solid rgba(0,212,255,0.08)">
+              <span style="font-size:0.6rem;color:#3a5a70">Wazuh v4.12.0 · Ubuntu Server · Windows 11 endpoint · node01</span>
               <div style="display:flex;gap:5px">
-                <span style="font-size:0.58rem;color:#3a5878;border:1px solid rgba(91,156,246,0.12);padding:2px 6px;border-radius:2px">SIEM</span>
-                <span style="font-size:0.58rem;color:#3a5878;border:1px solid rgba(91,156,246,0.12);padding:2px 6px;border-radius:2px">MITRE ATT&amp;CK</span>
-                <span style="font-size:0.58rem;color:#3a5878;border:1px solid rgba(91,156,246,0.12);padding:2px 6px;border-radius:2px">PCI DSS</span>
+                <span style="font-size:0.6rem;color:#3a6a80;border:1px solid rgba(0,212,255,0.12);padding:2px 6px;border-radius:2px;background:rgba(0,212,255,0.04)">SIEM</span>
+                <span style="font-size:0.6rem;color:#3a6a80;border:1px solid rgba(0,212,255,0.12);padding:2px 6px;border-radius:2px;background:rgba(0,212,255,0.04)">MITRE ATT&CK</span>
+                <span style="font-size:0.6rem;color:#3a6a80;border:1px solid rgba(0,212,255,0.12);padding:2px 6px;border-radius:2px;background:rgba(0,212,255,0.04)">PCI DSS</span>
               </div>
             </div>
           </div>
@@ -439,21 +475,25 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
       </div>
     </div>
 
+    <!-- ===== TECHHIVE ===== -->
     <div class="pcard">
       <div class="pinner">
         <h3>TechHive</h3>
         <div class="psub">Secure Role-Based Web Platform · Dec 2024 – Mar 2025</div>
-        <div class="cb"><div class="clabel">// THE PROBLEM</div><p class="ctext">Technology product research is fragmented — review sites, forums, and e-commerce are all separate. TechHive consolidates this into one platform, with the access control architecture treated as a core requirement.</p></div>
-        <div class="cb"><div class="clabel">// WHAT I BUILT</div><p class="ctext">A full-stack Django platform for product discovery, review, comparison, and purchase. Three user roles (Consumer, Reviewer, Admin) with tailored interfaces. Modules: product management, review analytics, side-by-side comparison, Q&amp;A forum, news feed, order system, and wishlist.</p></div>
+        <div class="cb"><div class="clabel">// THE PROBLEM</div>
+          <p class="ctext">Technology product research is fragmented — review sites, forums, and e-commerce are all separate. TechHive consolidates this into one platform, with the access control architecture treated as a core requirement.</p></div>
+        <div class="cb"><div class="clabel">// WHAT I BUILT</div>
+          <p class="ctext">A full-stack Django platform for product discovery, review, comparison, and purchase. Three user roles (Consumer, Reviewer, Admin) with tailored interfaces. Modules: product management, review analytics, side-by-side comparison, Q&A forum, news feed, order system, and wishlist.</p></div>
         <div class="cb"><div class="clabel">// SECURITY FOCUS</div>
           <ul class="plist">
             <li>RBAC enforced server-side on every view — no client-side trust</li>
-            <li>XSS sanitization on all user-generated content (reviews, Q&amp;A, comments)</li>
+            <li>XSS sanitization on all user-generated content (reviews, Q&A, comments)</li>
             <li>Secure session management, CSRF protection, and input validation throughout</li>
           </ul></div>
         <div class="pstack"><span class="stag">Django</span><span class="stag">PostgreSQL</span><span class="stag">Bootstrap</span><span class="stag">JavaScript</span><span class="stag">AJAX</span><span class="stag">RBAC</span></div>
+
         <div class="ss-wrap">
-          <div class="clabel" style="margin-bottom:0.6rem">// SCREENSHOT</div>
+          <div class="clabel" style="margin-bottom:0.65rem">// SCREENSHOT</div>
           <div class="ss-frame">
             <div class="ss-bar"><span class="ss-dot" style="background:#ff5f56"></span><span class="ss-dot" style="background:#ffbd2e"></span><span class="ss-dot" style="background:#27c93f"></span><span class="ss-url">localhost:8000/ · Customer View</span></div>
             <img src="techhive.png" class="ss-img" alt="TechHive Home"/>
@@ -463,12 +503,15 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
       </div>
     </div>
 
+    <!-- ===== INVENZA ===== -->
     <div class="pcard">
       <div class="pinner">
         <h3>Invenza</h3>
         <div class="psub">Warehouse Management System · Jun – Jul 2025</div>
-        <div class="cb"><div class="clabel">// THE PROBLEM</div><p class="ctext">Warehouse operations rely on spreadsheets and manual entry — leading to inconsistencies and no role separation. Supply chain systems are high-value targets: a single RBAC bypass could expose competitor inventory or allow stock manipulation.</p></div>
-        <div class="cb"><div class="clabel">// WHAT I BUILT</div><p class="ctext">A PHP/MySQL warehouse platform for Administrators (full inventory control, KPI dashboard), Suppliers (shipment tracking portal), and Customers (order and payment flow). Each role strictly scoped to its responsibilities.</p></div>
+        <div class="cb"><div class="clabel">// THE PROBLEM</div>
+          <p class="ctext">Warehouse operations rely on spreadsheets and manual entry — leading to inconsistencies and no role separation. Supply chain systems are high-value targets: a single RBAC bypass could expose competitor inventory or allow stock manipulation.</p></div>
+        <div class="cb"><div class="clabel">// WHAT I BUILT</div>
+          <p class="ctext">A PHP/MySQL warehouse platform for Administrators (full inventory control, KPI dashboard), Suppliers (shipment tracking portal), and Customers (order and payment flow). Each role strictly scoped to its responsibilities.</p></div>
         <div class="cb"><div class="clabel">// SECURITY FOCUS</div>
           <ul class="plist">
             <li>RBAC at every action — users cannot access operations outside their role, even via direct URL</li>
@@ -476,8 +519,9 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
             <li>Full audit trail for all transactions — detects discrepancies and unauthorized changes</li>
           </ul></div>
         <div class="pstack"><span class="stag">PHP</span><span class="stag">MySQL</span><span class="stag">RBAC</span><span class="stag">Session Management</span><span class="stag">Input Validation</span></div>
+
         <div class="ss-wrap">
-          <div class="clabel" style="margin-bottom:0.6rem">// SCREENSHOTS</div>
+          <div class="clabel" style="margin-bottom:0.65rem">// SCREENSHOTS</div>
           <div class="ss-tabs">
             <button class="ss-tab active" onclick="switchTab('inv','dash',this)">Admin Dashboard</button>
             <button class="ss-tab inactive" onclick="switchTab('inv','rep',this)">Reports</button>
@@ -496,13 +540,21 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
       </div>
     </div>
 
+    <!-- ===== VOYAGE (FIXED) ===== -->
     <div class="pcard pfeat">
       <div class="pfeat-inner">
+
+        <!-- LEFT: Info panel -->
         <div class="pfeat-info">
           <h3>Voyage</h3>
           <div class="psub">Tourism Management System · Jul – Oct 2024</div>
-          <div class="cb"><div class="clabel">// THE PROBLEM</div><p class="ctext">Travel booking is fragmented across multiple platforms. Voyage centralizes this — and as my earliest full-stack project, it was where I first applied systematic security thinking to a real-world use case.</p></div>
-          <div class="cb"><div class="clabel">// WHAT I BUILT</div><p class="ctext">A full-stack travel platform with secure online booking, customer reviews, blog, 24/7 helpline, and role-based access for customers, staff, and administrators. Features include a bucket list, end-to-end booking workflows, and Solo / Group / Couple travel package selection.</p></div>
+
+          <div class="cb"><div class="clabel">// THE PROBLEM</div>
+            <p class="ctext">Travel booking is fragmented across multiple platforms. Voyage centralizes this — and as my earliest full-stack project, it was where I first applied systematic security thinking to a real-world use case.</p></div>
+
+          <div class="cb"><div class="clabel">// WHAT I BUILT</div>
+            <p class="ctext">A full-stack travel platform with secure online booking, customer reviews, blog, 24/7 helpline, and role-based access for customers, staff, and administrators. Features include a bucket list, end-to-end booking workflows, and Solo / Group / Couple travel package selection.</p></div>
+
           <div class="cb"><div class="clabel">// SECURITY FOCUS</div>
             <ul class="plist">
               <li>Role-based access differentiating customer, staff, and admin across all modules — enforced server-side on every route</li>
@@ -510,9 +562,15 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
               <li>Session management hardened against fixation and hijacking; CSRF protection on all state-changing forms</li>
               <li>First project where I applied secure development practices end-to-end from initial design through deployment</li>
             </ul></div>
-          <div class="pstack"><span class="stag">PHP</span><span class="stag">MySQL</span><span class="stag">HTML/CSS</span><span class="stag">JavaScript</span><span class="stag">RBAC</span><span class="stag">Session Management</span></div>
+
+          <div class="pstack">
+            <span class="stag">PHP</span><span class="stag">MySQL</span><span class="stag">HTML/CSS</span>
+            <span class="stag">JavaScript</span><span class="stag">RBAC</span><span class="stag">Session Management</span>
+          </div>
+
+          <!-- SCREENSHOTS -->
           <div class="ss-wrap">
-            <div class="clabel" style="margin-bottom:0.6rem">// SCREENSHOTS</div>
+            <div class="clabel" style="margin-bottom:0.65rem">// SCREENSHOTS</div>
             <div class="ss-tabs">
               <button class="ss-tab active" onclick="switchTab('voy','hero',this)">Home</button>
               <button class="ss-tab inactive" onclick="switchTab('voy','pkg',this)">Packages</button>
@@ -529,8 +587,11 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
             </div>
           </div>
         </div>
+
+        <!-- RIGHT: Architecture / metrics panel -->
         <div class="pfeat-vis">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:0.63rem;color:var(--muted);letter-spacing:0.14em;margin-bottom:1rem">// PROJECT METRICS</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--muted);letter-spacing:0.12em;margin-bottom:1rem">// PROJECT METRICS</div>
+
           <div class="smet"><span class="mlab">Project timeline</span><span class="mval i">Jul – Oct 2024</span></div>
           <div class="smet"><span class="mlab">Stack</span><span class="mval i">PHP · MySQL</span></div>
           <div class="smet"><span class="mlab">User roles</span><span class="mval">3 (Customer / Staff / Admin)</span></div>
@@ -540,7 +601,8 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
           <div class="smet"><span class="mlab">Input validation</span><span class="mval">All booking &amp; payment forms</span></div>
           <div class="smet"><span class="mlab">CSRF protection</span><span class="mval">All state-changing forms</span></div>
           <div class="smet"><span class="mlab">Known CVEs</span><span class="mval">0</span></div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:0.63rem;color:var(--muted);letter-spacing:0.14em;margin:1.2rem 0 0.8rem">// MODULES</div>
+
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--muted);letter-spacing:0.12em;margin:1.2rem 0 0.8rem">// MODULES</div>
           <div class="orow"><span class="olab">Booking</span><div class="obar"><div class="ofill" style="width:100%"></div></div><span class="ost" style="color:var(--accent2)">Full</span></div>
           <div class="orow"><span class="olab">Packages</span><div class="obar"><div class="ofill" style="width:100%"></div></div><span class="ost" style="color:var(--accent2)">Full</span></div>
           <div class="orow"><span class="olab">Reviews</span><div class="obar"><div class="ofill" style="width:100%"></div></div><span class="ost" style="color:var(--accent2)">Full</span></div>
@@ -548,17 +610,21 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
           <div class="orow"><span class="olab">Blog</span><div class="obar"><div class="ofill" style="width:100%"></div></div><span class="ost" style="color:var(--accent2)">Full</span></div>
           <div class="orow"><span class="olab">Helpline</span><div class="obar"><div class="ofill" style="width:100%"></div></div><span class="ost" style="color:var(--accent2)">Full</span></div>
           <div class="orow"><span class="olab">Admin Panel</span><div class="obar"><div class="ofill" style="width:100%"></div></div><span class="ost" style="color:var(--accent2)">Full</span></div>
-          <div style="margin-top:1.4rem;padding:1rem;background:var(--accent-dim);border:1px solid rgba(91,156,246,0.15);border-radius:3px">
-            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.62rem;color:var(--accent);letter-spacing:0.1em;margin-bottom:0.45rem">// SECURITY NOTE</div>
-            <p style="font-size:0.78rem;color:var(--fg2);line-height:1.75">Voyage is the foundation. Every security principle applied here — RBAC, server-side validation, session hardening — was refined and extended in TechHive, Invenza, and ultimately CipherHub's 17-control architecture.</p>
+
+          <div style="margin-top:1.4rem;padding:1rem;background:rgba(0,212,255,0.04);border:1px solid rgba(0,212,255,0.12);border-radius:2px">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:0.66rem;color:var(--accent);letter-spacing:0.1em;margin-bottom:0.5rem">// SECURITY NOTE</div>
+            <p style="font-size:0.78rem;color:#7a9ab8;line-height:1.7">Voyage is the foundation. Every security principle applied here — RBAC, server-side validation, session hardening — was refined and extended in TechHive, Invenza, and ultimately CipherHub's 17-control architecture.</p>
           </div>
         </div>
+
       </div>
     </div>
+    <!-- ===== END VOYAGE ===== -->
 
   </div>
 </section>
 
+<!-- CERTIFICATIONS -->
 <section id="certifications">
   <div class="slabel">credentials</div>
   <h2 class="stitle">Certifications &amp; <span>Achievements</span></h2>
@@ -568,70 +634,83 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
     <div class="certcard"><div class="cico">🌐</div><div class="ctitle">Web Application Development</div><div class="corg">SCMS · Full Stack</div><div class="cdet">Certificate of Merit</div></div>
     <div class="certcard"><div class="cico">🌍</div><div class="ctitle">IELTS</div><div class="corg">British Council</div><div class="cdet">Band Score: 7.5 · Well above minimum</div></div>
   </div>
+
+  <!-- Certificate images -->
   <div style="margin-top:3rem">
     <div class="slabel" style="margin-bottom:1.5rem">certificate images</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem">
-      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:4px;overflow:hidden">
-        <div style="padding:0.7rem 1rem;border-bottom:1px solid var(--border);font-family:'IBM Plex Mono',monospace;font-size:0.66rem;color:var(--accent)">// NPTEL · Cyber Security and Privacy · IIT Madras</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
+
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:2px;overflow:hidden">
+        <div style="padding:0.75rem 1rem;border-bottom:1px solid var(--border);font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--accent)">// NPTEL · Cyber Security and Privacy · IIT Madras</div>
         <img src="Cyber_Security_and_Privacy.png" style="width:100%;display:block" alt="NPTEL Cyber Security Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-        <div style="display:none;align-items:center;justify-content:center;height:100px;color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:0.72rem;flex-direction:column;gap:0.4rem"><span style="color:var(--accent)">[ Certificate image ]</span><span>Add Cyber_Security_and_Privacy.png to folder</span></div>
-        <div style="padding:0.45rem 1rem;font-family:'IBM Plex Mono',monospace;font-size:0.61rem;color:var(--muted)">Roll No: NPTEL24CS121S1052101355 · IIT Madras · QS Rank #180</div>
+        <div style="display:none;align-items:center;justify-content:center;height:120px;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:0.75rem;flex-direction:column;gap:0.5rem">
+          <span style="color:var(--accent)">[ Certificate image ]</span>
+          <span>Add Cyber_Security_and_Privacy.png to folder</span>
+        </div>
+        <div style="padding:0.5rem 1rem;font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--muted)">Roll No: NPTEL24CS121S1052101355 · IIT Madras · QS Rank #180</div>
       </div>
-      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:4px;overflow:hidden">
-        <div style="padding:0.7rem 1rem;border-bottom:1px solid var(--border);font-family:'IBM Plex Mono',monospace;font-size:0.66rem;color:var(--accent)">// NPTEL · Brand Management · IIT Kanpur</div>
+
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:2px;overflow:hidden">
+        <div style="padding:0.75rem 1rem;border-bottom:1px solid var(--border);font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--accent)">// NPTEL · Brand Management · IIT Kanpur</div>
         <img src="Brand_Management.png" style="width:100%;display:block" alt="NPTEL Brand Management Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-        <div style="display:none;align-items:center;justify-content:center;height:100px;color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:0.72rem;flex-direction:column;gap:0.4rem"><span style="color:var(--accent)">[ Certificate image ]</span><span>Add Brand_Management.png to folder</span></div>
-        <div style="padding:0.45rem 1rem;font-family:'IBM Plex Mono',monospace;font-size:0.61rem;color:var(--muted)">Roll No: NPTEL24MG84S434800826 · IIT Kanpur</div>
+        <div style="display:none;align-items:center;justify-content:center;height:120px;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:0.75rem;flex-direction:column;gap:0.5rem">
+          <span style="color:var(--accent)">[ Certificate image ]</span>
+          <span>Add Brand_Management.png to folder</span>
+        </div>
+        <div style="padding:0.5rem 1rem;font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--muted)">Roll No: NPTEL24MG84S434800826 · IIT Kanpur</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY TU DUBLIN / MSc APPLICATION -->
+<section id="msc" style="background:var(--bg3);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="slabel">MSc application</div>
+  <h2 class="stitle">Why <span>TU Dublin</span></h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start">
+    <div>
+      <p style="color:#a0b4c8;line-height:1.9;font-size:0.95rem;margin-bottom:1.5rem">I am applying for the MSc Computing (Applied Cybersecurity) programme at Technological University Dublin for September 2026. While my Bachelor of Computer Applications from SCMS School of Technology and Management may be classified as a Level 7 qualification under Ireland’s NFQ, I believe my practical cybersecurity experience demonstrates readiness for Level 9 study.</p>
+      <p style="color:#a0b4c8;line-height:1.9;font-size:0.95rem;margin-bottom:1.5rem">I have independently designed, built, and security-tested real-world systems. My primary project, CipherHub, is a production-grade platform implementing intrusion detection, two-factor authentication, rate limiting, and protection against SQL injection and XSS. I validated its security through structured penetration testing, OWASP ZAP scanning, and threat modeling aligned with OWASP standards.</p>
+      <p style="color:#a0b4c8;line-height:1.9;font-size:0.95rem">In addition, I have implemented a SIEM environment using Wazuh, gaining hands-on experience in intrusion detection, file integrity monitoring, and MITRE ATT&CK mapping. I have also completed a certified cybersecurity course from IIT Madras and a six-month Python/Django internship. My IELTS score is 7.5.I have received offer letters from other recognised institutions in Ireland for the same Level 9 QQI programme. TU Dublin remains my first and only choice.</p>
+       <p style="color:#a0b4c8;line-height:1.9;font-size:0.95rem">
+    </div>Given this combination of applied security experience and academic foundation, I request that my application be considered under Recognition of Prior Learning. My work is publicly available for verification.</p>
+    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:2px;padding:1.75rem">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--muted);letter-spacing:0.12em;margin-bottom:1.2rem">// APPLICATION PROFILE</div>
+      <div class="irow"><span class="ilab">Programme</span><span class="ival bl">MSc Computing (Cybersecurity)</span></div>
+      <div class="irow"><span class="ilab">Intake</span><span class="ival gr">September 2026</span></div>
+      <div class="irow"><span class="ilab">IELTS</span><span class="ival gr">7.5 Band (min 6.5)</span></div>
+      <div class="irow"><span class="ilab">Degree</span><span class="ival">BCA · SCMS · 2025</span></div>
+      <div class="irow"><span class="ilab">NPTEL Cert</span><span class="ival bl">IIT Madras · QS #180</span></div>
+      <div class="irow"><span class="ilab">Key project</span><span class="ival" style="color:var(--accent3)">CipherHub · 1,363 attacks blocked</span></div>
+      <div class="irow"><span class="ilab">SIEM lab</span><span class="ival">Wazuh · MITRE ATT&CK</span></div>
+      <div class="irow"><span class="ilab">Internship</span><span class="ival">6 months · Soft Solutions</span></div>
+      <div class="irow"><span class="ilab">TryHackMe</span><span class="ival" style="color:var(--accent3)">rag18 (active)</span></div>
+      <div style="margin-top:1.2rem;padding:0.8rem;background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.15);border-radius:2px;font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--accent);text-align:center">
+        Requesting RPL consideration · Recognition of Prior Learning
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY TU DUBLIN -->
-<section id="msc">
-  <div class="slabel">MSc Application</div>
-  <h2 class="stitle">Why <span>TU Dublin</span></h2>
-  <div class="msc-grid">
-    <div class="msc-statement">
-      <p>I am applying for the MSc Computing (Applied Cybersecurity) programme at Technological University Dublin for the September 2026 intake. I am fully aware that my Bachelor of Computer Applications from SCMS School of Technology and Management may be classified as a Level 7 equivalent under Ireland's NFQ framework, and I respectfully request that the Admissions Committee consider my application alongside the practical cybersecurity work I have developed independently beyond my formal qualification.</p>
-      <p>The programme's emphasis on penetration testing, secure systems development, and real-world threat detection maps directly to work I have already built. <strong>CipherHub</strong>, my most recent project, is a production-grade cybersecurity community platform with a defense-in-depth security model — 17 distinct security controls, a custom Intrusion Detection Middleware that scans every HTTP request in real time for SQLi, XSS, path traversal, and command injection, TOTP Two-Factor Authentication, brute force and rate-limiting protection, and a staff-only SOC Security Dashboard. I tested it systematically: 8 manual penetration test scenarios, OWASP ZAP scanning, pip-audit CVE remediation, and a STRIDE Threat Model covering 28 threats across 5 system components, all mapped to OWASP Top 10 2021. The result was zero remaining CVEs and 1,363 real attack payloads blocked with zero allowed through.</p>
-      <p>Prior to CipherHub, I built and operated a SIEM environment using Wazuh on Ubuntu Server with a Windows 11 endpoint — configuring host-based intrusion detection, file integrity monitoring, PCI DSS compliance checking, and live MITRE ATT&amp;CK tactic mapping. I completed a 12-week NPTEL certification in Cyber Security and Privacy from IIT Madras (QS Rank #180), and a six-month software development internship at Soft Solutions, Ernakulam, working on Python and Django backend development in a professional production environment. I hold an IELTS band score of 7.5, well above the programme minimum of 6.5.</p>
-      <p>TU Dublin's applied, industry-focused approach to cybersecurity — combined with Dublin's role as the European headquarters for Google, Meta, Microsoft, IBM, and Citi — represents a pathway I cannot find elsewhere. I have received offer letters from other recognised institutions in Ireland for the same Level 9 QQI programme; TU Dublin remains my first and only choice. I respectfully request that this application be considered under TU Dublin's Recognition of Prior Learning provisions, or any available alternative pathway for applicants with demonstrated practical competence. All projects are publicly verifiable at github.com/rag-18 and rag-18.github.io.</p>
-    </div>
-    <div class="msc-card">
-      <div class="msc-card-label">Application Profile</div>
-      <div class="msc-row"><span class="msc-label">Programme</span><span class="msc-val a">MSc Computing (Cybersecurity)</span></div>
-      <div class="msc-row"><span class="msc-label">Intake</span><span class="msc-val g">September 2026</span></div>
-      <div class="msc-row"><span class="msc-label">IELTS</span><span class="msc-val g">7.5 Band (min 6.5)</span></div>
-      <div class="msc-row"><span class="msc-label">Degree</span><span class="msc-val">BCA · SCMS · 2025</span></div>
-      <div class="msc-row"><span class="msc-label">NPTEL Cert</span><span class="msc-val a">IIT Madras · QS #180</span></div>
-      <div class="msc-row"><span class="msc-label">Key Project</span><span class="msc-val o">CipherHub · 1,363 blocked</span></div>
-      <div class="msc-row"><span class="msc-label">SIEM Lab</span><span class="msc-val">Wazuh · MITRE ATT&amp;CK</span></div>
-      <div class="msc-row"><span class="msc-label">Internship</span><span class="msc-val">6 months · Soft Solutions</span></div>
-      <div class="msc-row"><span class="msc-label">TryHackMe</span><span class="msc-val o">rag18 (active)</span></div>
-      <div class="msc-row"><span class="msc-label">GitHub</span><span class="msc-val a">github.com/rag-18</span></div>
-      <div class="msc-row"><span class="msc-label">RPL Request</span><span class="msc-val a">Yes — Prior Learning</span></div>
-    </div>
-  </div>
-</section>
-
+<!-- CONTACT -->
 <section id="contact" style="background:var(--bg2);border-top:1px solid var(--border)">
   <div class="slabel">reach out</div>
   <div class="cinner">
     <div>
       <h2 class="stitle" style="margin-bottom:1rem">Let's <span>Connect</span></h2>
-      <p style="color:var(--muted);line-height:1.85;font-size:0.92rem;max-width:400px">Actively applying for MSc Cybersecurity programmes. Open to collaborations, security research, and interesting projects. Full CipherHub portfolio report available on request.</p>
+      <p style="color:#8a9ab0;line-height:1.8;font-size:0.95rem;max-width:420px">I'm actively applying for MSc Cybersecurity programs and open to collaborations, security research, or interesting projects. The full CipherHub portfolio report is available on request.</p>
       <div class="clinks">
         <a href="mailto:sreeragvv18@gmail.com" class="clink ce"><div class="cico2">@</div>sreeragvv18@gmail.com</a>
         <a href="https://linkedin.com/in/sreerag-v-v" target="_blank" class="clink cl"><div class="cico2">in</div>linkedin.com/in/sreerag-v-v</a>
         <a href="https://github.com/rag-18" target="_blank" class="clink cg"><div class="cico2">gh</div>github.com/rag-18</a>
         <a href="tel:+918129797348" class="clink cp"><div class="cico2">☎</div>+91 81297 97348</a>
-        <a href="https://tryhackme.com/p/rag18" target="_blank" class="clink" style="border-color:var(--border)"><div class="cico2" style="background:var(--accent3-dim);color:var(--accent3)">THM</div>tryhackme.com/p/rag18</a>
-        <a href="https://rag-18.github.io/Portfolio/" target="_blank" class="clink" style="border-color:var(--border)"><div class="cico2" style="background:var(--accent2-dim);color:var(--accent2)">↗</div>rag-18.github.io/Portfolio</a>
+        <a href="https://tryhackme.com/p/rag18" target="_blank" class="clink" style="border-color:var(--border)"><div class="cico2" style="background:rgba(255,107,53,0.1);color:var(--accent3)">THM</div>tryhackme.com/p/rag18</a>
+        <a href="https://rag-18.github.io/Portfolio/" target="_blank" class="clink" style="border-color:var(--border)"><div class="cico2" style="background:rgba(0,255,136,0.08);color:var(--accent2)">↗</div>rag-18.github.io/Portfolio</a>
       </div>
     </div>
     <div class="qcard">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.1em;color:var(--muted);margin-bottom:1.4rem">// QUICK PROFILE</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.1em;color:var(--muted);margin-bottom:1.5rem">// QUICK PROFILE</div>
       <div class="irow"><span class="ilab">Location</span><span class="ival">Kerala, India</span></div>
       <div class="irow"><span class="ilab">Education</span><span class="ival">BCA Graduate · 2025</span></div>
       <div class="irow"><span class="ilab">IELTS Score</span><span class="ival gr">7.5 Band</span></div>
@@ -654,12 +733,21 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
 </footer>
 
 <script>
-function switchTab(project,tab,btn){
-  var prefix=project+'-';
-  document.querySelectorAll('[id^="'+prefix+'"]').forEach(function(p){p.style.display='none'});
-  document.getElementById(prefix+tab).style.display='block';
-  btn.closest('.ss-tabs').querySelectorAll('.ss-tab').forEach(function(t){t.classList.remove('active');t.classList.add('inactive')});
-  btn.classList.remove('inactive');btn.classList.add('active');
+function switchTab(project, tab, btn) {
+  // Hide all panels for this project
+  var prefix = project + '-';
+  var panels = document.querySelectorAll('[id^="' + prefix + '"]');
+  panels.forEach(function(p) { p.style.display = 'none'; });
+  document.getElementById(prefix + tab).style.display = 'block';
+
+  // Update tab button styles within the same ss-tabs container
+  var container = btn.closest('.ss-tabs');
+  container.querySelectorAll('.ss-tab').forEach(function(t) {
+    t.classList.remove('active');
+    t.classList.add('inactive');
+  });
+  btn.classList.remove('inactive');
+  btn.classList.add('active');
 }
 </script>
 </body>
